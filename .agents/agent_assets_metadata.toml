@@ -1,0 +1,26 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "SBZxuBT_JcFdG0iim7xW4"
+uri = "file://artifacts/imperial-enterprise/public/hero-bg.png"
+type = "image"
+title = "Nairobi abstract 3D digital background"
+
+[[generated]]
+id = "QO76uwwaJPjIlzyXLe_ZG"
+uri = "file://artifacts/imperial-enterprise/public/team-1.png"
+type = "image"
+title = "Team member avatar 1"
+
+[[generated]]
+id = "jBKAabqswJv_y6DT35PA3"
+uri = "file://artifacts/imperial-enterprise/public/team-2.png"
+type = "image"
+title = "Team member avatar 2"
+
+[[generated]]
+id = "40GSneZdrmG7MM81nlB9A"
+uri = "file://artifacts/imperial-enterprise/public/team-3.png"
+type = "image"
+title = "Team member avatar 3"
