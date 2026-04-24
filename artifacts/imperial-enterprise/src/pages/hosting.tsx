@@ -5,7 +5,7 @@ import {
   Cpu, Database, Lock, RefreshCw, Package, LayoutGrid,
 } from "lucide-react";
 
-const BASE = "http://imperialenterprise.supersite2.srsportal.com";
+const BASE = "https://shop.imperialenterprise.co.ke";
 
 const plans = [
   {
