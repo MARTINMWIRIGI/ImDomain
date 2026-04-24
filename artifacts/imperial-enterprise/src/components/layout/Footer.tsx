@@ -1,5 +1,6 @@
 import { Link } from "wouter";
-import { Facebook, Instagram, Linkedin, Twitter, Youtube, MapPin, Phone, Mail } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Twitter, Youtube, MapPin, Phone, Mail, MessageCircle } from "lucide-react";
+import logoImg from "@assets/Gemini_Generated_Image_okqsneokqsneokqs_1_1777048351938.png";
 
 export function Footer() {
   return (
@@ -8,16 +9,27 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
           <div className="lg:col-span-2 space-y-6">
             <Link href="/" className="inline-block">
-              <span className="font-extrabold text-3xl tracking-tighter text-white">
-                IMPERIAL
-                <span className="text-primary">.</span>
-              </span>
+              <img
+                src={logoImg}
+                alt="Imperial Enterprise"
+                className="h-12 w-auto object-contain brightness-0 invert"
+              />
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed max-w-sm">
               Dominating the Digital Space — One Brand at a Time. We help Kenyan businesses outpace their competition with world-class digital strategies, web hosting, and domain solutions.
             </p>
-            <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-300 hover:bg-primary hover:text-white transition-colors">
+            <div className="flex gap-4 flex-wrap">
+              <a
+                href="https://wa.me/+254703823398"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid="link-footer-whatsapp"
+                className="w-10 h-10 rounded-full bg-[#25D366]/20 flex items-center justify-center text-[#25D366] hover:bg-[#25D366] hover:text-white transition-colors"
+                title="WhatsApp"
+              >
+                <MessageCircle size={18} />
+              </a>
+              <a href="https://www.linkedin.com/in/martinmwirigi" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-300 hover:bg-primary hover:text-white transition-colors">
                 <Linkedin size={18} />
               </a>
               <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-300 hover:bg-primary hover:text-white transition-colors">
@@ -66,7 +78,16 @@ export function Footer() {
                 </div>
                 <div>
                   <p className="text-xs text-gray-500 mb-1 uppercase tracking-wider font-bold">Call / WhatsApp</p>
-                  <a href="tel:+254703823398" className="text-sm text-gray-300 hover:text-primary transition-colors">+254 703 823 398</a>
+                  <a href="tel:+254703823398" className="text-sm text-gray-300 hover:text-primary transition-colors block">+254 703 823 398</a>
+                  <a
+                    href="https://wa.me/+254703823398"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-xs text-[#25D366] font-bold mt-1.5 hover:text-[#1EBE5C] transition-colors"
+                  >
+                    <MessageCircle size={12} />
+                    Chat on WhatsApp
+                  </a>
                 </div>
               </li>
               <li className="flex items-start gap-4">
@@ -114,15 +135,14 @@ export function Footer() {
           </Link>
         </div>
 
-        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-gray-500 text-sm">
-            Imperial Enterprise &copy; {new Date().getFullYear()}. All Rights Reserved.
+        {/* Bottom copyright */}
+        <div className="pt-8 border-t border-white/10 flex flex-col items-center gap-2 text-center">
+          <p className="text-gray-400 text-sm">
+            &copy; All rights reserved.
           </p>
-          <p className="text-gray-500 text-sm italic">Dominating the Digital Space — One Brand at a Time.</p>
-          <div className="flex gap-6">
-            <a href="#" className="text-gray-500 hover:text-white text-sm transition-colors">Privacy Policy</a>
-            <a href="#" className="text-gray-500 hover:text-white text-sm transition-colors">Terms of Service</a>
-          </div>
+          <p className="text-gray-500 text-xs font-bold uppercase tracking-widest">
+            IMPERIAL ENTERPRISE &mdash; Powering Websites
+          </p>
         </div>
       </div>
     </footer>
