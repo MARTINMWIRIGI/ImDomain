@@ -1,8 +1,19 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { ArrowRight, BarChart3, Globe, Zap, Shield, Target } from "lucide-react";
+import { ArrowRight, BarChart3, Globe, Zap, Shield, Target, Search, Server, CheckCircle2 } from "lucide-react";
 
 export default function Home() {
+  const [domainQuery, setDomainQuery] = useState("");
+  const [domainSearched, setDomainSearched] = useState(false);
+
+  const handleDomainSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (domainQuery.trim()) {
+      setDomainSearched(true);
+    }
+  };
+
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
@@ -73,6 +84,169 @@ export default function Home() {
                 {logo}
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Domain Search Section */}
+      <section className="py-16 md:py-20 bg-gradient-to-br from-secondary to-secondary/90 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:28px_28px]" />
+        <div className="absolute -top-16 right-0 w-80 h-80 rounded-full bg-primary/10 blur-3xl" />
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="text-center mb-10">
+            <span className="inline-block bg-primary/20 text-primary text-xs font-black uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
+              Domain Registration
+            </span>
+            <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight mb-3">
+              Secure Your Domain Name Today
+            </h2>
+            <p className="text-gray-300 text-lg max-w-xl mx-auto">
+              .co.ke from just <span className="text-primary font-black">KSh 999/year</span>. Fast registration, instant DNS, free management panel.
+            </p>
+          </div>
+
+          <form onSubmit={handleDomainSearch} className="max-w-2xl mx-auto mb-8">
+            <div className="flex flex-col sm:flex-row gap-0 bg-white rounded-2xl shadow-2xl shadow-black/30 overflow-hidden border-2 border-primary/30">
+              <input
+                type="text"
+                value={domainQuery}
+                onChange={(e) => { setDomainQuery(e.target.value); setDomainSearched(false); }}
+                placeholder="yourbusiness.co.ke"
+                data-testid="input-home-domain-search"
+                className="flex-1 px-6 py-4 text-secondary text-lg font-medium placeholder:text-gray-300 focus:outline-none rounded-l-2xl"
+              />
+              <button
+                type="submit"
+                data-testid="button-home-domain-check"
+                className="bg-primary text-white px-8 py-4 font-black uppercase tracking-wider text-sm hover:bg-amber-600 transition-colors flex items-center gap-2 justify-center shrink-0"
+              >
+                <Search size={18} />
+                Check
+              </button>
+            </div>
+            {domainSearched && domainQuery.trim() && (
+              <motion.div
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="mt-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4 text-left"
+              >
+                <p className="text-white text-sm mb-3 font-semibold">
+                  Results for <span className="text-primary font-black">{domainQuery.trim().toLowerCase()}</span>
+                </p>
+                <div className="grid grid-cols-2 gap-2">
+                  {[".co.ke", ".com", ".africa", ".shop"].map((ext) => (
+                    <div key={ext} className="flex items-center justify-between bg-white/10 rounded-lg px-4 py-2.5">
+                      <span className="text-white text-sm font-medium">{domainQuery.trim().toLowerCase()}{ext}</span>
+                      <Link href="/contact" className="text-xs bg-primary text-white px-3 py-1 rounded font-bold hover:bg-amber-600 transition-colors">
+                        Register
+                      </Link>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            )}
+          </form>
+
+          {/* TLD Pricing Strip */}
+          <div className="flex flex-wrap justify-center gap-4 md:gap-8">
+            {[
+              { ext: ".co.ke", price: "999" },
+              { ext: ".com", price: "1,200" },
+              { ext: ".africa", price: "1,800" },
+              { ext: ".shop", price: "399" },
+              { ext: ".online", price: "299" },
+            ].map((tld) => (
+              <Link key={tld.ext} href="/domains" className="text-center group">
+                <p className="text-white font-black text-lg group-hover:text-primary transition-colors">{tld.ext}</p>
+                <p className="text-primary text-xs font-bold">KSh {tld.price}/yr</p>
+              </Link>
+            ))}
+          </div>
+          <p className="text-center text-gray-400 text-xs mt-6">
+            <Link href="/domains" className="hover:text-primary transition-colors underline underline-offset-2">View all domain extensions →</Link>
+          </p>
+        </div>
+      </section>
+
+      {/* Hosting Plans Teaser */}
+      <section className="py-16 md:py-24 bg-amber-50 border-y border-amber-100">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+            <div className="max-w-lg">
+              <span className="inline-block bg-primary/15 text-primary text-xs font-black uppercase tracking-widest px-4 py-1.5 rounded-full mb-5">
+                Web Hosting Kenya
+              </span>
+              <h2 className="text-3xl md:text-4xl font-black text-secondary tracking-tight mb-5">
+                Fast, Affordable Hosting <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-amber-600">Starting at KSh 2,500/yr</span>
+              </h2>
+              <p className="text-gray-600 leading-relaxed mb-8">
+                Host your website with Imperial Enterprise and get cPanel access, free SSL, daily backups, and local Kenyan support — all in one place.
+              </p>
+              <ul className="space-y-3 mb-8">
+                {[
+                  "Free SSL Certificate on all plans",
+                  "cPanel Control Panel included",
+                  "99.9% Uptime Guarantee",
+                  "Kenyan support team — call or WhatsApp",
+                ].map((item) => (
+                  <li key={item} className="flex items-center gap-3 text-sm text-gray-700 font-medium">
+                    <CheckCircle2 size={16} className="text-primary shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <Link
+                href="/hosting"
+                data-testid="link-home-view-hosting"
+                className="inline-flex items-center gap-2 bg-secondary text-white px-8 py-4 rounded-xl font-bold uppercase tracking-wide hover:bg-primary transition-all hover:-translate-y-0.5 shadow-lg"
+              >
+                View Hosting Plans
+                <ArrowRight size={16} />
+              </Link>
+            </div>
+
+            {/* Hosting plan cards mini preview */}
+            <div className="flex flex-col gap-4 w-full lg:w-auto lg:min-w-[380px]">
+              {[
+                { name: "Starter", price: "2,500", features: ["1 Website", "5 GB SSD", "Free SSL", "10 Emails"], highlight: false },
+                { name: "Business", price: "5,500", features: ["5 Websites", "20 GB SSD", "Free SSL", "Daily Backups"], highlight: true },
+                { name: "Enterprise", price: "12,000", features: ["Unlimited Sites", "50 GB SSD", "Free SSL + Domain", "Priority Support"], highlight: false },
+              ].map((plan, i) => (
+                <motion.div
+                  key={plan.name}
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className={`flex items-center justify-between p-5 rounded-2xl border transition-all ${
+                    plan.highlight
+                      ? "bg-secondary text-white border-secondary shadow-lg shadow-secondary/20"
+                      : "bg-white border-gray-100 shadow-sm"
+                  }`}
+                >
+                  <div className="flex items-center gap-4">
+                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${plan.highlight ? "bg-primary/20" : "bg-gray-50"}`}>
+                      <Server size={18} className={plan.highlight ? "text-primary" : "text-secondary"} />
+                    </div>
+                    <div>
+                      <p className={`font-black text-sm uppercase tracking-wide ${plan.highlight ? "text-white" : "text-secondary"}`}>
+                        {plan.name}
+                      </p>
+                      <p className={`text-xs ${plan.highlight ? "text-gray-300" : "text-gray-400"}`}>
+                        {plan.features.join(" · ")}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="text-right shrink-0 ml-4">
+                    <p className={`font-black text-lg ${plan.highlight ? "text-primary" : "text-secondary"}`}>
+                      KSh {plan.price}
+                    </p>
+                    <p className={`text-xs ${plan.highlight ? "text-gray-400" : "text-gray-400"}`}>/year</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
