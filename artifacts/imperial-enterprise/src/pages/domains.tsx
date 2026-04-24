@@ -5,7 +5,7 @@ import {
   RefreshCw, Tag, Layers, Star, FileSearch, Zap, Gift,
 } from "lucide-react";
 
-const BASE = "https://imperialenterprise.co.ke";
+const BASE = "http://imperialenterprise.supersite2.srsportal.com";
 
 const tlds = [
   { ext: ".co.ke", price: "999", badge: "Kenyan Favorite", featured: true },
