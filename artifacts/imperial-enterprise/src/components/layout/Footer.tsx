@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { Facebook, Instagram, Linkedin, Twitter, Youtube, MapPin, Phone, Mail, MessageCircle } from "lucide-react";
-import logoImg from "@assets/Gemini_Generated_Image_okqsneokqsneokqs_1_1777048351938.png";
+const logoImg = "/logo-transparent.png";
 
 export function Footer() {
   return (
@@ -138,10 +138,10 @@ export function Footer() {
         {/* Bottom copyright */}
         <div className="pt-8 border-t border-white/10 flex flex-col items-center gap-2 text-center">
           <p className="text-gray-400 text-sm">
-            &copy; All rights reserved.
+            &copy; 2026 All Rights Reserved
           </p>
-          <p className="text-gray-500 text-xs font-bold uppercase tracking-widest">
-            IMPERIAL ENTERPRISE &mdash; Powering Websites
+          <p className="text-gray-500 text-xs font-bold uppercase tracking-widest whitespace-nowrap">
+            IMPERIAL ENTERPRISE &mdash; POWERING WEBSITES
           </p>
         </div>
       </div>

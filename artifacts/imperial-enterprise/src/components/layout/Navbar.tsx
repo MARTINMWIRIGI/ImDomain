@@ -2,7 +2,7 @@ import { Link, useLocation } from "wouter";
 import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown, Server, Globe, MessageCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import logoImg from "@assets/Gemini_Generated_Image_okqsneokqsneokqs_1_1777048351938.png";
+const logoImg = "/logo-transparent.png";
 
 export function Navbar() {
   const [location] = useLocation();
