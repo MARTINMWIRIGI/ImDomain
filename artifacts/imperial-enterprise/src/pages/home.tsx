@@ -53,7 +53,7 @@ export default function Home() {
               </div>
               <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-secondary tracking-tighter leading-[1.05] mb-8">
                 DOMINATE THE <br className="hidden md:block" />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-amber-600">DIGITAL BATTLEFIELD</span>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-700">DIGITAL BATTLEFIELD</span>
               </h1>
               <p className="text-lg md:text-xl text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed font-medium">
                 We build powerful, high-converting digital experiences for Kenyan businesses, startups, and ambitious brands ready to outpace their competition.
@@ -73,20 +73,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Logos Section */}
-      <section className="py-12 border-y border-gray-100 bg-white">
-        <div className="container mx-auto px-6">
-          <p className="text-center text-xs font-bold uppercase tracking-[0.2em] text-gray-400 mb-8">Trusted by ambitious Kenyan brands</p>
-          <div className="flex flex-wrap justify-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-            {["Safaricom", "KCB Group", "M-Pesa Business", "Jumia Kenya", "Twiga Foods"].map((logo) => (
-              <div key={logo} className="text-xl md:text-2xl font-black text-secondary tracking-tighter flex items-center gap-2">
-                <div className="w-6 h-6 bg-secondary rounded-sm" />
-                {logo}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Domain Search Section */}
       <section className="py-16 md:py-20 bg-gradient-to-br from-secondary to-secondary/90 relative overflow-hidden">
@@ -118,7 +104,7 @@ export default function Home() {
               <button
                 type="submit"
                 data-testid="button-home-domain-check"
-                className="bg-primary text-white px-8 py-4 font-black uppercase tracking-wider text-sm hover:bg-amber-600 transition-colors flex items-center gap-2 justify-center shrink-0"
+                className="bg-primary text-white px-8 py-4 font-black uppercase tracking-wider text-sm hover:bg-blue-700 transition-colors flex items-center gap-2 justify-center shrink-0"
               >
                 <Search size={18} />
                 Check
@@ -137,9 +123,9 @@ export default function Home() {
                   {[".co.ke", ".com", ".africa", ".shop"].map((ext) => (
                     <div key={ext} className="flex items-center justify-between bg-white/10 rounded-lg px-4 py-2.5">
                       <span className="text-white text-sm font-medium">{domainQuery.trim().toLowerCase()}{ext}</span>
-                      <Link href="/contact" className="text-xs bg-primary text-white px-3 py-1 rounded font-bold hover:bg-amber-600 transition-colors">
+                      <a href="https://shop.imperialenterprise.co.ke/buy-domain-kenya" target="_blank" rel="noopener noreferrer" className="text-xs bg-primary text-white px-3 py-1 rounded font-bold hover:bg-blue-700 transition-colors">
                         Register
-                      </Link>
+                      </a>
                     </div>
                   ))}
                 </div>
@@ -169,7 +155,7 @@ export default function Home() {
       </section>
 
       {/* Hosting Plans Teaser */}
-      <section className="py-16 md:py-24 bg-amber-50 border-y border-amber-100">
+      <section className="py-16 md:py-24 bg-blue-50 border-y border-blue-100">
         <div className="container mx-auto px-6">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
             <div className="max-w-lg">
@@ -178,7 +164,7 @@ export default function Home() {
               </span>
               <h2 className="text-3xl md:text-4xl font-black text-secondary tracking-tight mb-5">
                 Fast, Affordable Hosting <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-amber-600">Starting at KSh 2,500/yr</span>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-700">Starting at KSh 2,500/yr</span>
               </h2>
               <p className="text-gray-600 leading-relaxed mb-8">
                 Host your website with Imperial Enterprise and get cPanel access, free SSL, daily backups, and local Kenyan support — all in one place.
