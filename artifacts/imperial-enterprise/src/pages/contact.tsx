@@ -85,13 +85,30 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Map Placeholder */}
-            <div className="h-64 bg-gray-100 rounded-2xl border border-gray-200 relative overflow-hidden flex items-center justify-center group cursor-pointer">
-              <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/subtle-dots.png')] opacity-50"></div>
-              <div className="text-center relative z-10">
-                <MapPin size={32} className="text-gray-400 mx-auto mb-2 group-hover:text-primary transition-colors" />
-                <span className="font-bold text-gray-500 group-hover:text-secondary transition-colors uppercase tracking-widest text-sm">View on Maps</span>
+            {/* Nairobi Satellite Map */}
+            <div className="rounded-2xl overflow-hidden border border-gray-200 shadow-md">
+              <div className="bg-secondary px-4 py-2.5 flex items-center gap-2">
+                <MapPin size={14} className="text-primary" />
+                <span className="text-xs font-bold text-white uppercase tracking-wider">Nairobi, Kenya — Headquarters</span>
               </div>
+              <iframe
+                title="Imperial Enterprise Nairobi Location"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63820.78738754628!2d36.75218219511737!3d-1.2920659999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1172d84d49a7%3A0xf7cf0254b297924c!2sNairobi%2C+Kenya!5e1!3m2!1sen!2ske!4v1714000000000!5m2!1sen!2ske"
+                width="100%"
+                height="280"
+                style={{ border: 0, display: "block" }}
+                allowFullScreen={false}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+              <a
+                href="https://maps.google.com/?q=Nairobi+CBD+Kenya"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 bg-gray-50 hover:bg-primary/5 py-3 text-xs font-bold text-primary uppercase tracking-widest transition-colors border-t border-gray-100"
+              >
+                <MapPin size={12} /> Open in Google Maps
+              </a>
             </div>
           </div>
 
