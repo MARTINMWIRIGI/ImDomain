@@ -4,72 +4,58 @@ import tailwindcss from "@tailwindcss/vite";
 import path from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 
-const rawPort = process.env.PORT;
-
-if (!rawPort) {
-  throw new Error(
-    "PORT environment variable is required but was not provided.",
-  );
-}
-
-const port = Number(rawPort);
-
-if (Number.isNaN(port) || port <= 0) {
-  throw new Error(`Invalid PORT value: "${rawPort}"`);
-}
-
-const basePath = process.env.BASE_PATH;
-
-if (!basePath) {
-  throw new Error(
-    "BASE_PATH environment variable is required but was not provided.",
-  );
-}
+// ✅ Safe defaults (no crashing if env vars missing)
+const port = Number(process.env.PORT) || 5173;
+const basePath = process.env.BASE_PATH || "/";
 
 export default defineConfig({
   base: basePath,
+
   plugins: [
     react(),
     tailwindcss(),
     runtimeErrorOverlay(),
+
+    // ✅ Only load Replit plugins in dev (and safely)
     ...(process.env.NODE_ENV !== "production" &&
     process.env.REPL_ID !== undefined
       ? [
           await import("@replit/vite-plugin-cartographer").then((m) =>
             m.cartographer({
-              root: path.resolve(import.meta.dirname, ".."),
-            }),
+              root: path.resolve(__dirname, ".."),
+            })
           ),
           await import("@replit/vite-plugin-dev-banner").then((m) =>
-            m.devBanner(),
+            m.devBanner()
           ),
         ]
       : []),
   ],
+
   resolve: {
     alias: {
-      "@": path.resolve(import.meta.dirname, "src"),
-      "@assets": path.resolve(import.meta.dirname, "..", "..", "attached_assets"),
+      "@": path.resolve(__dirname, "src"),
+      "@assets": path.resolve(__dirname, "..", "..", "attached_assets"),
     },
     dedupe: ["react", "react-dom"],
   },
-  root: path.resolve(import.meta.dirname),
+
+  root: path.resolve(__dirname),
+
   build: {
-    outDir: path.resolve(import.meta.dirname, "dist/public"),
+    // ✅ Vercel expects plain dist folder
+    outDir: path.resolve(__dirname, "dist"),
     emptyOutDir: true,
   },
+
+  // ✅ Dev only — ignored by Vercel
   server: {
     port,
-    strictPort: true,
     host: "0.0.0.0",
-    allowedHosts: true,
-    fs: {
-      strict: true,
-    },
   },
+
   preview: {
     port,
     host: "0.0.0.0",
-    allowedHosts: true,
   },
 });
