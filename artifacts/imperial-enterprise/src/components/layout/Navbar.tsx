@@ -4,7 +4,7 @@ import {
   Menu, X, ChevronDown, Server, Globe, MessageCircle,
   Phone, TrendingUp, Code2, Search, Share2, Palette,
   ShoppingCart, Cloud, Cpu, Database, Mail, Zap, Shield,
-  RefreshCw, Tag, Star, FileSearch, ArrowRight, Package,
+  RefreshCw, Tag, Star, FileSearch, ArrowRight, Package, Linkedin,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -69,7 +69,7 @@ export function Navbar() {
   const navItems = [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
-    { name: "Portfolio", href: "/portfolio" },
+    { name: "Solutions", href: "/portfolio" },
     { name: "Contact", href: "/contact" },
   ];
 
@@ -357,7 +357,7 @@ export function Navbar() {
             <div className="flex flex-col px-5 py-6 gap-1 flex-1">
 
               {/* Direct Links */}
-              {[{ name: "Home", href: "/" }, { name: "About", href: "/about" }, { name: "Portfolio", href: "/portfolio" }, { name: "Contact", href: "/contact" }].map((link) => (
+              {[{ name: "Home", href: "/" }, { name: "About", href: "/about" }, { name: "Solutions", href: "/portfolio" }, { name: "Contact", href: "/contact" }].map((link) => (
                 <Link
                   key={link.name}
                   href={link.href}
@@ -457,17 +457,48 @@ export function Navbar() {
                 </AnimatePresence>
               </div>
 
-              {/* WhatsApp */}
-              <a
-                href="https://wa.me/+254703823398"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="flex items-center gap-3 px-4 py-3 rounded-xl text-[#25D366] font-bold hover:bg-green-50 mt-2"
-              >
-                <MessageCircle size={22} />
-                <span className="text-lg">Chat on WhatsApp</span>
-              </a>
+              {/* Contact Strip */}
+              <div className="mt-4 pt-4 border-t border-gray-100">
+                <p className="text-[10px] font-black uppercase tracking-widest text-gray-400 px-4 mb-3">Get in Touch</p>
+                <div className="grid grid-cols-2 gap-2 px-1">
+                  <a
+                    href="https://wa.me/+254703823398"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="flex items-center gap-2 px-4 py-3 rounded-xl bg-[#25D366]/10 text-[#25D366] font-bold hover:bg-[#25D366] hover:text-white transition-colors"
+                  >
+                    <MessageCircle size={18} />
+                    <span className="text-sm">WhatsApp</span>
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/martinmwirigi"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="flex items-center gap-2 px-4 py-3 rounded-xl bg-[#0077B5]/10 text-[#0077B5] font-bold hover:bg-[#0077B5] hover:text-white transition-colors"
+                  >
+                    <Linkedin size={18} />
+                    <span className="text-sm">LinkedIn</span>
+                  </a>
+                  <a
+                    href="mailto:info@imperialenterprise.co.ke"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="flex items-center gap-2 px-4 py-3 rounded-xl bg-primary/10 text-primary font-bold hover:bg-primary hover:text-white transition-colors"
+                  >
+                    <Mail size={18} />
+                    <span className="text-sm">Email Us</span>
+                  </a>
+                  <a
+                    href="tel:+254703823398"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="flex items-center gap-2 px-4 py-3 rounded-xl bg-primary/10 text-primary font-bold hover:bg-primary hover:text-white transition-colors"
+                  >
+                    <Phone size={18} />
+                    <span className="text-sm">Call Us</span>
+                  </a>
+                </div>
+              </div>
             </div>
 
             <div className="p-5 border-t border-gray-100">

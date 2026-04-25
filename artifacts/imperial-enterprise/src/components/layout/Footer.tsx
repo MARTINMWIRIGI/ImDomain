@@ -1,6 +1,7 @@
 import { Link } from "wouter";
-import { Facebook, Instagram, Linkedin, Twitter, Youtube, MapPin, Phone, Mail, MessageCircle } from "lucide-react";
+import { Linkedin, MapPin, Phone, Mail, MessageCircle } from "lucide-react";
 const logoImg = "/logo-transparent.png";
+const BASE = "https://shop.imperialenterprise.co.ke";
 
 export function Footer() {
   return (
@@ -18,7 +19,8 @@ export function Footer() {
             <p className="text-gray-400 text-sm leading-relaxed max-w-sm">
               Dominating the Digital Space — One Brand at a Time. We help Kenyan businesses outpace their competition with world-class digital strategies, web hosting, and domain solutions.
             </p>
-            <div className="flex gap-4 flex-wrap">
+            {/* Connected social & contact icons only */}
+            <div className="flex gap-3 flex-wrap">
               <a
                 href="https://wa.me/+254703823398"
                 target="_blank"
@@ -29,20 +31,28 @@ export function Footer() {
               >
                 <MessageCircle size={18} />
               </a>
-              <a href="https://www.linkedin.com/in/martinmwirigi" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-300 hover:bg-primary hover:text-white transition-colors">
+              <a
+                href="https://www.linkedin.com/in/martinmwirigi"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-300 hover:bg-[#0077B5] hover:text-white transition-colors"
+                title="LinkedIn"
+              >
                 <Linkedin size={18} />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-300 hover:bg-primary hover:text-white transition-colors">
-                <Twitter size={18} />
+              <a
+                href="mailto:info@imperialenterprise.co.ke"
+                className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-300 hover:bg-primary hover:text-white transition-colors"
+                title="Email Us"
+              >
+                <Mail size={18} />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-300 hover:bg-primary hover:text-white transition-colors">
-                <Instagram size={18} />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-300 hover:bg-primary hover:text-white transition-colors">
-                <Facebook size={18} />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-300 hover:bg-primary hover:text-white transition-colors">
-                <Youtube size={18} />
+              <a
+                href="tel:+254703823398"
+                className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-300 hover:bg-primary hover:text-white transition-colors"
+                title="Call Us"
+              >
+                <Phone size={18} />
               </a>
             </div>
           </div>
@@ -53,7 +63,7 @@ export function Footer() {
               <li><Link href="/" className="text-gray-400 hover:text-primary transition-colors text-sm">Home</Link></li>
               <li><Link href="/services" className="text-gray-400 hover:text-primary transition-colors text-sm">Services</Link></li>
               <li><Link href="/about" className="text-gray-400 hover:text-primary transition-colors text-sm">About Us</Link></li>
-              <li><Link href="/portfolio" className="text-gray-400 hover:text-primary transition-colors text-sm">Portfolio</Link></li>
+              <li><Link href="/portfolio" className="text-gray-400 hover:text-primary transition-colors text-sm">Our Solutions</Link></li>
               <li><Link href="/contact" className="text-gray-400 hover:text-primary transition-colors text-sm">Contact</Link></li>
             </ul>
           </div>
@@ -63,9 +73,21 @@ export function Footer() {
             <ul className="space-y-3">
               <li><Link href="/hosting" className="text-gray-400 hover:text-primary transition-colors text-sm">Web Hosting</Link></li>
               <li><Link href="/domains" className="text-gray-400 hover:text-primary transition-colors text-sm">Domain Names</Link></li>
-              <li><Link href="/domains" className="text-gray-400 hover:text-primary transition-colors text-sm">.co.ke Domains</Link></li>
-              <li><Link href="/domains" className="text-gray-400 hover:text-primary transition-colors text-sm">Domain Transfer</Link></li>
-              <li><Link href="/hosting" className="text-gray-400 hover:text-primary transition-colors text-sm">Free SSL Certificates</Link></li>
+              <li>
+                <a href={`${BASE}/buy-domain-kenya`} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary transition-colors text-sm">
+                  .co.ke Domains
+                </a>
+              </li>
+              <li>
+                <a href={`${BASE}/transfer-domain-kenya`} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary transition-colors text-sm">
+                  Domain Transfer
+                </a>
+              </li>
+              <li>
+                <a href={`${BASE}/web-hosting/index`} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary transition-colors text-sm">
+                  Free SSL Certificates
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -96,7 +118,7 @@ export function Footer() {
                 </div>
                 <div>
                   <p className="text-xs text-gray-500 mb-1 uppercase tracking-wider font-bold">Email Us</p>
-                  <a href="mailto:info@imperialenterprise.co.ke" className="text-sm text-gray-300 hover:text-primary transition-colors">info@imperialenterprise.co.ke</a>
+                  <a href="mailto:info@imperialenterprise.co.ke" className="text-sm text-gray-300 hover:text-primary transition-colors break-all">info@imperialenterprise.co.ke</a>
                 </div>
               </li>
               <li className="flex items-start gap-4">
@@ -127,12 +149,14 @@ export function Footer() {
               </div>
             ))}
           </div>
-          <Link
-            href="/domains"
-            className="shrink-0 bg-primary text-white px-6 py-3 rounded-lg font-bold text-sm uppercase tracking-wide hover:bg-amber-600 transition-colors"
+          <a
+            href={`${BASE}/buy-domain-kenya`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="shrink-0 bg-primary text-white px-6 py-3 rounded-lg font-bold text-sm uppercase tracking-wide hover:bg-blue-700 transition-colors"
           >
             Search Domains
-          </Link>
+          </a>
         </div>
 
         {/* Bottom copyright */}
