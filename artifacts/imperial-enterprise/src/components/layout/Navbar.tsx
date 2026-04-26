@@ -9,7 +9,7 @@ import {
 import { motion, AnimatePresence } from "framer-motion";
 
 const logoImg = "/logo-transparent.png";
-const BASE = "https://imperialenterprise.co.ke";
+const BASE = "https://truehost.co.ke/cloud/aff.php?aff=2464";
 
 const serviceItems = [
   { icon: <TrendingUp size={18} />, name: "Digital Marketing", desc: "Google Ads, Meta Ads & paid campaigns", href: "/services" },
