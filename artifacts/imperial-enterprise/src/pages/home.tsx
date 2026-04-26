@@ -123,7 +123,7 @@ export default function Home() {
                   {[".co.ke", ".com", ".africa", ".shop"].map((ext) => (
                     <div key={ext} className="flex items-center justify-between bg-white/10 rounded-lg px-4 py-2.5">
                       <span className="text-white text-sm font-medium">{domainQuery.trim().toLowerCase()}{ext}</span>
-                      <a href="https://shop.imperialenterprise.co.ke/buy-domain-kenya" target="_blank" rel="noopener noreferrer" className="text-xs bg-primary text-white px-3 py-1 rounded font-bold hover:bg-blue-700 transition-colors">
+                      <a href="https://truehost.co.ke/cloud/aff.php?aff=2464" target="_blank" rel="noopener noreferrer" className="text-xs bg-primary text-white px-3 py-1 rounded font-bold hover:bg-blue-700 transition-colors">
                         Register
                       </a>
                     </div>
