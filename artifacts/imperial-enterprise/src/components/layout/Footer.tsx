@@ -1,7 +1,7 @@
 import { Link } from "wouter";
 import { Linkedin, MapPin, Phone, Mail, MessageCircle } from "lucide-react";
 const logoImg = "/logo-transparent.png";
-const BASE = "https://imperialenterprise.co.ke";
+const BASE = "https://truehost.co.ke/cloud/aff.php?aff=2464";
 
 export function Footer() {
   return (
