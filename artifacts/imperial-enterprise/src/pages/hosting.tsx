@@ -48,7 +48,7 @@ const plans = [
       { label: "Unlimited Bandwidth", included: true },
     ],
     cta: "Get Business",
-    ctaLink: `${BASE}/web-hosting/index`,
+    ctaLink: `${BASE}`,
   },
   {
     name: "Enterprise",
@@ -69,7 +69,7 @@ const plans = [
       { label: "Unlimited Bandwidth", included: true },
     ],
     cta: "Get Enterprise",
-    ctaLink: `${BASE}/web-hosting/index`,
+    ctaLink: `${BASE}`,
   },
 ];
 
@@ -79,7 +79,7 @@ const hostingTypes = [
     label: "Linux Hosting",
     desc: "cPanel-based shared hosting, ideal for most websites. Affordable and reliable.",
     color: "from-blue-500 to-blue-600",
-    link: `${BASE}/web-hosting/index`,
+    link: `${BASE}`,
     badge: null,
   },
   {
@@ -87,7 +87,7 @@ const hostingTypes = [
     label: "WordPress Hosting",
     desc: "Optimised servers pre-tuned for WordPress — faster load times, auto-updates.",
     color: "from-indigo-500 to-indigo-600",
-    link: `${BASE}/optimized-wordpress-hosting`,
+    link: `${BASE}`,
     badge: "Optimised",
   },
   {
@@ -95,7 +95,7 @@ const hostingTypes = [
     label: "Cloud Hosting",
     desc: "Scalable cloud infrastructure that grows with your traffic and business.",
     color: "from-cyan-500 to-cyan-600",
-    link: `${BASE}/cloudhosting`,
+    link: `${BASE}`,
     badge: null,
   },
   {
@@ -103,7 +103,7 @@ const hostingTypes = [
     label: "Linux KVM VPS",
     desc: "Dedicated virtual resources with full root access. For power users and developers.",
     color: "from-emerald-500 to-emerald-600",
-    link: `${BASE}/virtualserverlinux-hosting`,
+    link: `${BASE}`,
     badge: null,
   },
   {
@@ -111,7 +111,7 @@ const hostingTypes = [
     label: "Dedicated Servers",
     desc: "Maximum power and isolation. Your own physical server, fully managed.",
     color: "from-orange-500 to-orange-600",
-    link: `${BASE}/dedicated-servers`,
+    link: `${BASE}`,
     badge: "High Performance",
   },
   {
@@ -119,7 +119,7 @@ const hostingTypes = [
     label: "Reseller Hosting",
     desc: "Start your own hosting business. White-label cPanel accounts with WHMCS.",
     color: "from-purple-500 to-purple-600",
-    link: `${BASE}/reseller-hosting`,
+    link: `${BASE}`,
     badge: null,
   },
 ];
@@ -129,21 +129,21 @@ const emailOptions = [
     icon: <Mail size={24} />,
     label: "Business Email",
     desc: "Professional @yourdomain email accounts — look credible from day one.",
-    link: `${BASE}/business-email`,
+    link: `${BASE}`,
     tag: "From KSh 600/yr",
   },
   {
     icon: <Zap size={24} />,
     label: "Titan Business Email",
     desc: "Next-gen business email with smart inbox, calendar, and collaboration tools.",
-    link: `${BASE}/titan-business-email-hosting`,
+    link: `${BASE}`,
     tag: "Powered by Titan",
   },
   {
     icon: <Server size={24} />,
     label: "Enterprise Email Hosting",
     desc: "High-volume, high-security email infrastructure for large organisations.",
-    link: `${BASE}/web-hosting/enterprise-email-hosting`,
+    link: `${BASE}`,
     tag: "Enterprise Grade",
   },
 ];
@@ -153,28 +153,28 @@ const addons = [
     icon: <Shield size={22} />,
     label: "SiteLock Security",
     desc: "Daily malware scanning, threat removal, and a trust seal for your site.",
-    link: `${BASE}/sitelock`,
+    link: `${BASE}`,
     color: "text-red-500 bg-red-50",
   },
   {
     icon: <RefreshCw size={22} />,
     label: "CodeGuard Backups",
     desc: "Automatic daily website backups with one-click restore — peace of mind guaranteed.",
-    link: `${BASE}/codeguard`,
+    link: `${BASE}`,
     color: "text-blue-500 bg-blue-50",
   },
   {
     icon: <Lock size={22} />,
     label: "Comodo SSL Certificate",
     desc: "Premium SSL certificates from Comodo — the most trusted name in web security.",
-    link: `${BASE}/digital-certificate`,
+    link: `${BASE}`,
     color: "text-emerald-500 bg-emerald-50",
   },
   {
     icon: <Package size={22} />,
     label: "Combo Offers",
     desc: "Bundle hosting + domain + email for maximum savings in one great package.",
-    link: `${BASE}/combo-offers`,
+    link: `${BASE}`,
     color: "text-amber-500 bg-amber-50",
   },
 ];
