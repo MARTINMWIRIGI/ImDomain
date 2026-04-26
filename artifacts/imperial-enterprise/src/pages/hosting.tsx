@@ -27,7 +27,7 @@ const plans = [
       { label: "Unlimited Bandwidth", included: false },
     ],
     cta: "Get Starter",
-    ctaLink: `${BASE}/web-hosting/index`,
+    ctaLink: `${BASE}`,
   },
   {
     name: "Business",
