@@ -1,3 +1,5 @@
+import { SEOHead, SEO_CONFIG } from "@/components/SEOHead";
+import { FAQSchema, DOMAINS_FAQS } from "@/components/FAQSchema";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import {
@@ -126,6 +128,8 @@ export default function Domains() {
   const cleanQuery = searchQuery.trim().toLowerCase().replace(/^https?:\/\//, "").replace(/\/$/, "").replace(/\.[^.]+$/, "");
 
   return (
+    <SEOHead {...SEO_CONFIG.domains} />
+<FAQSchema faqs={DOMAINS_FAQS} />
     <div className="min-h-screen bg-white pt-28 pb-24">
 
       {/* Hero / Search */}
