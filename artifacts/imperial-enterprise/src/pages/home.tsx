@@ -16,6 +16,7 @@ export default function Home() {
   };
 
   return (
+<>
 <SEOHead {...SEO_CONFIG.home} />
     <div className="overflow-hidden">
       {/* Hero Section */}
@@ -407,5 +408,6 @@ export default function Home() {
         </div>
       </section>
     </div>
+</>
   );
 }
