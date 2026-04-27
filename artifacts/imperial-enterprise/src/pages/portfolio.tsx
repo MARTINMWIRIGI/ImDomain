@@ -201,6 +201,7 @@ const testimonials = [
 
 export default function Portfolio() {
   return (
+<>
     <SEOHead {...SEO_CONFIG.portfolio} />
     
     <div className="min-h-screen bg-white">
@@ -422,5 +423,6 @@ export default function Portfolio() {
       </section>
 
     </div>
+</>
   );
 }
