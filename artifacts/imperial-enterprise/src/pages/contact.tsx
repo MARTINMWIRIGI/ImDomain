@@ -1,3 +1,4 @@
+import { SEOHead, SEO_CONFIG } from "@/components/SEOHead";
 import { motion } from "framer-motion";
 import { Mail, MapPin, Phone, ArrowRight, MessageCircle, Linkedin } from "lucide-react";
 import { useState } from "react";
@@ -21,6 +22,7 @@ export default function Contact() {
   };
 
   return (
+    <SEOHead {...SEO_CONFIG.contact} />
     <div className="pt-28 pb-0 min-h-screen bg-white">
 
       {/* Page Header */}
