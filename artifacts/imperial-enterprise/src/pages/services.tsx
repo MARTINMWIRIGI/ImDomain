@@ -1,3 +1,5 @@
+import { SEOHead, SEO_CONFIG } from "@/components/SEOHead";
+import { FAQSchema, SERVICES_FAQS } from "@/components/FAQSchema";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { 
@@ -70,6 +72,8 @@ export default function Services() {
   ];
 
   return (
+    <SEOHead {...SEO_CONFIG.services} />
+<FAQSchema faqs={SERVICES_FAQS} />
     <div className="pt-32 pb-24 min-h-screen bg-gray-50">
       <div className="container mx-auto px-6">
         
