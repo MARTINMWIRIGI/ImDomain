@@ -1,3 +1,4 @@
+import { SEOHead, SEO_CONFIG } from "@/components/SEOHead";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
@@ -15,6 +16,7 @@ export default function Home() {
   };
 
   return (
+<SEOHead {...SEO_CONFIG.home} />
     <div className="overflow-hidden">
       {/* Hero Section */}
       <section className="relative min-h-[100dvh] flex items-center pt-24 pb-12 overflow-hidden bg-slate-50">
