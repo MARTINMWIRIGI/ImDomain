@@ -1,3 +1,5 @@
+import { SEOHead, SEO_CONFIG } from "@/components/SEOHead";
+import { FAQSchema, HOSTING_FAQS } from "@/components/FAQSchema";
 import { motion } from "framer-motion";
 import {
   CheckCircle2, X, Zap, Shield, Server, HardDrive,
@@ -190,6 +192,8 @@ const features = [
 
 export default function Hosting() {
   return (
+    <SEOHead {...SEO_CONFIG.hosting} />
+<FAQSchema faqs={HOSTING_FAQS} />
     <div className="min-h-screen bg-white pt-28 pb-24">
 
       {/* Hero Header */}
