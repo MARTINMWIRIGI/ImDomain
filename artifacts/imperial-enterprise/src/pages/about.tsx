@@ -1,3 +1,4 @@
+import { SEOHead, SEO_CONFIG } from "@/components/SEOHead";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { Linkedin, ExternalLink, Code2, TrendingUp, Globe, Lightbulb, CheckCircle2, ArrowRight } from "lucide-react";
@@ -26,6 +27,7 @@ export default function About() {
   ];
 
   return (
+    <SEOHead {...SEO_CONFIG.about} />
     <div className="pt-32 pb-24 min-h-screen bg-white">
 
       {/* Mission / Hero */}
