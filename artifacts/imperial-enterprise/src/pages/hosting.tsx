@@ -192,6 +192,7 @@ const features = [
 
 export default function Hosting() {
   return (
+<>
     <SEOHead {...SEO_CONFIG.hosting} />
 <FAQSchema faqs={HOSTING_FAQS} />
     <div className="min-h-screen bg-white pt-28 pb-24">
@@ -485,5 +486,6 @@ export default function Hosting() {
       </section>
 
     </div>
+</>
   );
 }
