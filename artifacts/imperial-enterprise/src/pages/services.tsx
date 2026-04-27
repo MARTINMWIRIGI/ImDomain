@@ -72,6 +72,7 @@ export default function Services() {
   ];
 
   return (
+<>
     <SEOHead {...SEO_CONFIG.services} />
 <FAQSchema faqs={SERVICES_FAQS} />
     <div className="pt-32 pb-24 min-h-screen bg-gray-50">
@@ -160,5 +161,6 @@ export default function Services() {
 
       </div>
     </div>
+</>
   );
 }
