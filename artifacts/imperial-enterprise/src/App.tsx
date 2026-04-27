@@ -28,6 +28,8 @@ function Router() {
         <Route path="/contact" component={Contact} />
         <Route path="/hosting" component={Hosting} />
         <Route path="/domains" component={Domains} />
+<Route path="/blog" component={Blog} />
+<Route path="/blog/:slug" component={BlogPost} />
         <Route component={NotFound} />
       </Switch>
     </Layout>
