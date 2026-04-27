@@ -1,0 +1,22 @@
+# Imperial Enterprise - imperialenterprise.co.ke
+# Nairobi's Premier Digital Growth Agency
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://imperialenterprise.co.ke/sitemap.xml
+
+# Block development/test paths
+Disallow: /api/
+Disallow: /_next/
+Disallow: /static/chunks/
+
+# Allow all media
+Allow: /assets/
+Allow: /*.js$
+Allow: /*.css$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.svg$
+Allow: /*.webp$
