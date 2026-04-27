@@ -27,6 +27,7 @@ export default function About() {
   ];
 
   return (
+<>
     <SEOHead {...SEO_CONFIG.about} />
     <div className="pt-32 pb-24 min-h-screen bg-white">
 
@@ -248,5 +249,6 @@ export default function About() {
       </section>
 
     </div>
+</>
   );
 }
