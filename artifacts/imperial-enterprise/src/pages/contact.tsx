@@ -22,6 +22,7 @@ export default function Contact() {
   };
 
   return (
+<>
     <SEOHead {...SEO_CONFIG.contact} />
     <div className="pt-28 pb-0 min-h-screen bg-white">
 
@@ -194,5 +195,6 @@ export default function Contact() {
         </div>
       </div>
     </div>
+</>
   );
 }
