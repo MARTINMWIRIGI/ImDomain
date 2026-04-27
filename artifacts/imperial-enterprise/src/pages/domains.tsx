@@ -128,6 +128,7 @@ export default function Domains() {
   const cleanQuery = searchQuery.trim().toLowerCase().replace(/^https?:\/\//, "").replace(/\/$/, "").replace(/\.[^.]+$/, "");
 
   return (
+<>
     <SEOHead {...SEO_CONFIG.domains} />
 <FAQSchema faqs={DOMAINS_FAQS} />
     <div className="min-h-screen bg-white pt-28 pb-24">
@@ -439,5 +440,6 @@ export default function Domains() {
       </section>
 
     </div>
+</>
   );
 }
