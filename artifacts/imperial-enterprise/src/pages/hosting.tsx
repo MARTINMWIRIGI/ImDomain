@@ -9,6 +9,22 @@ import {
 
 const BASE = "https://truehost.co.ke/cloud/aff.php?aff=2464";
 
+const hostingSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Web Hosting Kenya - Imperial Enterprise",
+  "description": "Fast, reliable, affordable web hosting in Kenya from KSh 2,500/year. Free SSL, cPanel, daily backups, 99.9% uptime, and local support.",
+  "brand": {
+    "@type": "Brand",
+    "name": "Imperial Enterprise"
+  },
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "KES",
+    "lowestPrice": "2500"
+  }
+};
+
 const plans = [
   {
     name: "Starter",
@@ -192,8 +208,8 @@ const features = [
 
 export default function Hosting() {
   return (
-<>
-    <SEOHead {...SEO_CONFIG.hosting} />
+    <>
+      <SEOHead {...SEO_CONFIG.hosting} schema={hostingSchema} />
 <FAQSchema faqs={HOSTING_FAQS} />
     <div className="min-h-screen bg-white pt-28 pb-24">
 

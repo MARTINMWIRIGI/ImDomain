@@ -34,6 +34,23 @@ export default function BlogPost() {
     );
   }
 
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": article.title,
+    "description": article.excerpt,
+    "author": {
+      "@type": "Person",
+      "name": article.author
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Imperial Enterprise"
+    },
+    "keywords": article.keywords,
+    "articleBody": article.content
+  };
+
   return (
     <>
       <SEOHead
@@ -41,6 +58,7 @@ export default function BlogPost() {
         description={article.excerpt}
         keywords={article.keywords}
         canonicalPath={`/blog/${article.slug}`}
+        schema={articleSchema}
       />
       <div className="pt-32 pb-24 min-h-screen bg-white">
         <article className="container mx-auto px-6 max-w-3xl">

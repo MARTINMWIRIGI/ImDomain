@@ -5,6 +5,25 @@ import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 
 export default function Contact() {
+  const contactSchema = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact Imperial Enterprise",
+    "description": "Get in touch with Imperial Enterprise for a free market entry strategy consultation. Book your strategy call today.",
+    "organization": {
+      "@type": "Organization",
+      "name": "Imperial Enterprise",
+      "url": "https://imperialenterprise.co.ke",
+      "telephone": "+254703823398",
+      "email": "hello@imperialenterprise.co.ke",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "KE",
+        "addressLocality": "Nairobi"
+      }
+    }
+  };
+
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -22,8 +41,8 @@ export default function Contact() {
   };
 
   return (
-<>
-    <SEOHead {...SEO_CONFIG.contact} />
+    <>
+      <SEOHead {...SEO_CONFIG.contact} schema={contactSchema} />
     <div className="pt-28 pb-0 min-h-screen bg-white">
 
       {/* Page Header */}

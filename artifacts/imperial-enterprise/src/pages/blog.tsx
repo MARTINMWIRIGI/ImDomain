@@ -5,13 +5,26 @@ import { ArrowRight, Calendar, Clock, Tag } from "lucide-react";
 import { blogArticles } from "@/data/blog-data";
 
 export default function Blog() {
+  const blogSchema = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Imperial Enterprise Blog",
+    "description": "Expert insights on digital marketing, SEO, web hosting, and business strategy for Kenyan SMEs and startups",
+    "url": "https://imperialenterprise.co.ke/blog",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Imperial Enterprise"
+    }
+  };
+
   return (
     <>
       <SEOHead
-        title="Blog | Digital Marketing, SEO & Web Hosting Tips Kenya | Imperial Enterprise"
-        description="Expert insights on web hosting, SEO, digital marketing, and web development for Kenyan businesses. Stay ahead with tips from Nairobi's premier digital agency."
-        keywords="digital marketing blog Kenya, SEO tips Kenya, web hosting guide Kenya, Nairobi business tips"
+        title="Blog | Digital Marketing, SEO, Business Strategy & Market Entry Insights | Imperial Enterprise"
+        description="Expert insights on market entry, digital growth, business strategy, SEO, and scaling for Kenyan SMEs and startups. Actionable guides from Kenya's leading growth consultants."
+        keywords="business blog Kenya, market entry insights, digital growth tips, SEO blog Kenya, startup strategy, business strategy Kenya, consulting blog"
         canonicalPath="/blog"
+        schema={blogSchema}
       />
       <div className="pt-32 pb-24 min-h-screen bg-white">
         <section className="container mx-auto px-6">

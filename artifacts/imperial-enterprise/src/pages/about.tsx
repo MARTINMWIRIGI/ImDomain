@@ -5,6 +5,24 @@ import { Linkedin, ExternalLink, Code2, TrendingUp, Globe, Lightbulb, CheckCircl
 import martinPhoto from "@assets/PSX_20251101_213933_1777047441895.png";
 
 export default function About() {
+  const aboutSchema = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About Imperial Enterprise",
+    "description": "Imperial Enterprise is Kenya's leading market entry and digital growth consulting firm helping SMEs, startups and brands grow online and expand into East African markets.",
+    "organization": {
+      "@type": "Organization",
+      "name": "Imperial Enterprise",
+      "url": "https://imperialenterprise.co.ke",
+      "foundingDate": "2019",
+      "areaServed": ["KE", "EA"],
+      "founder": {
+        "@type": "Person",
+        "name": "Martin Wirigi"
+      }
+    }
+  };
+
   const stats = [
     { label: "Years Building Brands", value: "5+" },
     { label: "Clients Served", value: "120+" },
@@ -27,8 +45,8 @@ export default function About() {
   ];
 
   return (
-<>
-    <SEOHead {...SEO_CONFIG.about} />
+    <>
+      <SEOHead {...SEO_CONFIG.about} schema={aboutSchema} />
     <div className="pt-32 pb-24 min-h-screen bg-white">
 
       {/* Mission / Hero */}

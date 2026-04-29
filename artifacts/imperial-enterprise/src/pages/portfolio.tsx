@@ -7,6 +7,17 @@ import {
   Star, Quote, Zap, BarChart3, Users, MessageCircle,
 } from "lucide-react";
 
+const portfolioSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Portfolio - Imperial Enterprise Case Studies",
+  "description": "Browse case studies and success stories of how Imperial Enterprise helped Kenyan businesses grow, enter new markets, and scale sustainably.",
+  "organization": {
+    "@type": "Organization",
+    "name": "Imperial Enterprise"
+  }
+};
+
 const services = [
   {
     id: 1,
@@ -201,8 +212,8 @@ const testimonials = [
 
 export default function Portfolio() {
   return (
-<>
-    <SEOHead {...SEO_CONFIG.portfolio} />
+    <>
+      <SEOHead {...SEO_CONFIG.portfolio} schema={portfolioSchema} />
     
     <div className="min-h-screen bg-white">
 

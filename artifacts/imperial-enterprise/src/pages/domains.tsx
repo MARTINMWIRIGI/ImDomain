@@ -9,6 +9,22 @@ import {
 
 const BASE = "https://truehost.co.ke/cloud/aff.php?aff=2464";
 
+const domainsSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Domain Registration Kenya - Imperial Enterprise",
+  "description": "Register domain names in Kenya at the best prices. .co.ke from KSh 999/yr, .com from KSh 1,200/yr. Instant DNS activation, free management panel.",
+  "brand": {
+    "@type": "Brand",
+    "name": "Imperial Enterprise"
+  },
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "KES",
+    "lowestPrice": "299"
+  }
+};
+
 const tlds = [
   { ext: ".co.ke", price: "999", badge: "Kenyan Favorite", featured: true },
   { ext: ".ke", price: "999", badge: null, featured: false },
@@ -128,8 +144,8 @@ export default function Domains() {
   const cleanQuery = searchQuery.trim().toLowerCase().replace(/^https?:\/\//, "").replace(/\/$/, "").replace(/\.[^.]+$/, "");
 
   return (
-<>
-    <SEOHead {...SEO_CONFIG.domains} />
+    <>
+      <SEOHead {...SEO_CONFIG.domains} schema={domainsSchema} />
 <FAQSchema faqs={DOMAINS_FAQS} />
     <div className="min-h-screen bg-white pt-28 pb-24">
 
