@@ -7,9 +7,30 @@ import {
 } from "lucide-react";
 
 export default function Home() {
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Imperial Enterprise",
+    "url": "https://imperialenterprise.co.ke",
+    "logo": "https://imperialenterprise.co.ke/logo.png",
+    "description": "Market entry consulting and digital growth services for SMEs and startups in Kenya and East Africa",
+    "telephone": "+254703823398",
+    "email": "hello@imperialenterprise.co.ke",
+    "areaServed": ["KE", "EA"],
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "KE",
+      "addressLocality": "Nairobi"
+    },
+    "sameAs": [
+      "https://twitter.com/imperialent",
+      "https://linkedin.com/company/imperial-enterprise"
+    ]
+  };
+
   return (
     <>
-      <SEOHead {...SEO_CONFIG.home} />
+      <SEOHead {...SEO_CONFIG.home} schema={organizationSchema} />
       <div className="overflow-hidden bg-white">
         
         {/* HERO SECTION */}

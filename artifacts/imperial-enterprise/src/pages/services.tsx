@@ -7,9 +7,39 @@ import {
 } from "lucide-react";
 
 export default function Services() {
+  const servicesSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Imperial Enterprise",
+    "url": "https://imperialenterprise.co.ke",
+    "description": "Strategic growth & digital services for SMEs, startups & brands in Kenya",
+    "areaServed": "KE",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Growth & Digital Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Business Growth & Strategy Consulting",
+          "description": "Market research, business positioning strategy, customer acquisition, pricing strategy, growth planning"
+        },
+        {
+          "@type": "Offer",
+          "name": "Startup & Scaling Systems",
+          "description": "Go-to-market strategy, digital sales systems, customer journey mapping, growth funnel development"
+        },
+        {
+          "@type": "Offer",
+          "name": "Digital & Execution Services",
+          "description": "Website design & development, branding, SEO, content creation, social media management"
+        }
+      ]
+    }
+  };
+
   return (
     <>
-      <SEOHead {...SEO_CONFIG.services} />
+      <SEOHead {...SEO_CONFIG.services} schema={servicesSchema} />
       <div className="overflow-hidden bg-white">
         
         {/* HERO SECTION */}
