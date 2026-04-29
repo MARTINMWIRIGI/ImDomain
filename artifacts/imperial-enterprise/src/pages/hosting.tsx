@@ -222,7 +222,7 @@ export default function Hosting() {
           text: "Get Started Now",
           href: "https://truehost.co.ke/cloud/aff.php?aff=2464",
         }}
-        overlayOpacity="medium"
+        overlayOpacity="light"
       />
 
     <div className="bg-white pb-24">

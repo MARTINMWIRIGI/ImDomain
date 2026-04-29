@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { 
   ArrowRight, CheckCircle2, Target, TrendingUp, AlertCircle, 
-  Zap, BarChart3, MapPin, Users, Briefcase, Shield, Layers 
+  Zap, BarChart3, MapPin, Users, Briefcase, Shield, Layers, Mail
 } from "lucide-react";
 
 export default function Home() {
@@ -36,8 +36,8 @@ export default function Home() {
         
         {/* HERO SECTION */}
         <Hero
-          title="Helping Businesses Grow Digitally and Enter East African Markets with Confidence"
-          subtitle="We combine digital growth systems with market intelligence to help companies build visibility, identify real buyers, and expand into Kenya and beyond."
+          title="Scale Your Business in East Africa. Fast."
+          subtitle="Digital growth systems + market intelligence + real buyer connections. We help Kenyan businesses dominate their markets."
           backgroundImage="/hero-home.jpg"
           primaryCTA={{
             text: "Book a Strategy Call",
@@ -47,7 +47,7 @@ export default function Home() {
             text: "View Services",
             href: "/services",
           }}
-          overlayOpacity="medium"
+          overlayOpacity="light"
         />
 
         {/* PROBLEM AWARENESS SECTION */}
@@ -370,6 +370,66 @@ export default function Home() {
                 </Link>
               </motion.div>
             </div>
+          </div>
+        </section>
+
+        {/* NEWSLETTER SECTION */}
+        <section className="relative py-16 md:py-24 bg-gradient-to-br from-primary/10 via-secondary/5 to-transparent overflow-hidden">
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-primary/5 blur-3xl" />
+            <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-secondary/5 blur-3xl" />
+          </div>
+
+          <div className="container mx-auto px-6 relative z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="max-w-4xl mx-auto"
+            >
+              <div className="grid md:grid-cols-2 gap-8 items-center bg-white rounded-2xl shadow-soft-lg p-8 md:p-12 border border-gray-100">
+                {/* Newsletter Info */}
+                <div>
+                  <h3 className="text-3xl md:text-4xl font-black text-secondary mb-4">
+                    Stay <span className="text-primary">Ahead</span> of Market Trends
+                  </h3>
+                  <p className="text-gray-600 mb-6 text-lg">
+                    Get weekly insights on market entry strategies, digital growth, and business intelligence straight to your inbox. Join 500+ Kenyan entrepreneurs building their empires.
+                  </p>
+                  <ul className="space-y-3 mb-8">
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 size={20} className="text-primary mt-1 flex-shrink-0" />
+                      <span className="text-gray-700 font-medium">Market entry strategies & insights</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 size={20} className="text-primary mt-1 flex-shrink-0" />
+                      <span className="text-gray-700 font-medium">Digital growth case studies</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 size={20} className="text-primary mt-1 flex-shrink-0" />
+                      <span className="text-gray-700 font-medium">Exclusive opportunities & tools</span>
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Newsletter CTA */}
+                <div className="flex flex-col items-center justify-center p-8 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-xl border border-primary/10">
+                  <Mail size={48} className="text-primary mb-4" />
+                  <h4 className="text-2xl font-bold text-secondary mb-2 text-center">Join the Movement</h4>
+                  <p className="text-gray-600 text-center mb-6 text-sm">Get exclusive market entry insights delivered weekly</p>
+                  <a
+                    href="https://newsletter.imperialenterprise.co.ke"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full bg-primary text-white px-6 py-3 rounded-lg font-bold text-center hover:bg-blue-700 transition-all hover:shadow-lg inline-flex items-center justify-center gap-2 group"
+                  >
+                    <Mail size={18} />
+                    Subscribe Now
+                  </a>
+                  <p className="text-xs text-gray-400 mt-4 text-center">No spam. Unsubscribe anytime.</p>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </section>
 

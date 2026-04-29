@@ -58,7 +58,7 @@ export default function About() {
           text: "Work With Us",
           href: "/contact",
         }}
-        overlayOpacity="medium"
+        overlayOpacity="light"
       />
 
     <div className="pb-24 bg-white">

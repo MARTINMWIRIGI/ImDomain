@@ -32,7 +32,7 @@ export default function Blog() {
         title="The Imperial Blog"
         subtitle="Expert insights on market entry, digital growth, and business strategy to help Kenyan entrepreneurs dominate their markets."
         backgroundImage="/hero-blog.jpg"
-        overlayOpacity="medium"
+        overlayOpacity="light"
       />
 
       <div className="pb-24 bg-white">

@@ -158,7 +158,7 @@ export default function Domains() {
           text: "Search Now",
           href: "https://truehost.co.ke/cloud/aff.php?aff=2464",
         }}
-        overlayOpacity="medium"
+        overlayOpacity="light"
       />
 
     <div className="bg-white pb-24">

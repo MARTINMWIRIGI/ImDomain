@@ -54,7 +54,7 @@ export default function Contact() {
           text: "Schedule Your Call",
           href: "#contact-form",
         }}
-        overlayOpacity="medium"
+        overlayOpacity="light"
       />
 
     <div className="pb-0 bg-white">

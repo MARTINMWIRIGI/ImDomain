@@ -225,7 +225,7 @@ export default function Portfolio() {
           text: "Start Your Project",
           href: "/contact",
         }}
-        overlayOpacity="medium"
+        overlayOpacity="light"
       />
 
       {/* Stats Bar */}

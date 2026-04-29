@@ -69,9 +69,10 @@ export function Navbar() {
   const navItems = [
     { name: "Home", href: "/" },
     { name: "Services", href: "/services" },
-    { name: "Market Entry Consulting", href: "/market-entry" },
-    { name: "Case Insights", href: "/insights" },
+    { name: "Growth Resources", href: "/blog" },
+    { name: "Portfolio", href: "/portfolio" },
     { name: "About", href: "/about" },
+    { name: "Newsletter", href: "https://newsletter.imperialenterprise.co.ke", external: true },
     { name: "Contact", href: "/contact" },
   ];
 
@@ -293,13 +294,25 @@ export function Navbar() {
 
             {/* Direct links */}
             {navItems.slice(1).map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className={`px-4 py-2 text-sm font-semibold rounded-lg transition-colors hover:bg-primary/10 hover:text-primary ${location === link.href ? "text-primary bg-primary/10" : "text-secondary"}`}
-              >
-                {link.name}
-              </Link>
+              link.external ? (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`px-4 py-2 text-sm font-semibold rounded-lg transition-colors hover:bg-primary/10 hover:text-primary text-secondary`}
+                >
+                  {link.name}
+                </a>
+              ) : (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className={`px-4 py-2 text-sm font-semibold rounded-lg transition-colors hover:bg-primary/10 hover:text-primary ${location === link.href ? "text-primary bg-primary/10" : "text-secondary"}`}
+                >
+                  {link.name}
+                </Link>
+              )
             ))}
           </nav>
 

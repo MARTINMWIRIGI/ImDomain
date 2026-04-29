@@ -29,14 +29,14 @@ export function Hero({
   overlayOpacity = "medium",
 }: HeroProps) {
   const overlayOpacityMap = {
-    light: "bg-black/[0.5]",
-    medium: "bg-black/[0.65]",
+    light: "bg-black/[0.6]",
+    medium: "bg-black/[0.6]",
     heavy: "bg-black/[0.75]",
   };
 
   return (
     <div
-      className={`relative w-full min-h-screen bg-cover bg-center flex items-center justify-center ${
+      className={`relative w-full h-screen md:h-[80vh] lg:h-[85vh] bg-cover bg-center flex items-center justify-center ${
         useParallax ? "hero-parallax" : ""
       }`}
       style={{
@@ -46,7 +46,7 @@ export function Hero({
     >
       {/* Dark Overlay with Gradient */}
       <div className={`absolute inset-0 ${overlayOpacityMap[overlayOpacity]} z-10`}></div>
-      <div className="absolute inset-0 bg-gradient-to-b from-black/[0.75] to-black/[0.5] z-10"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-black/[0.6] to-black/[0.4] z-10"></div>
 
       {/* Hero Content */}
       <motion.div
@@ -56,7 +56,7 @@ export function Hero({
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         {/* Title */}
-        <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold font-display mb-4 md:mb-6 leading-tight line-clamp-4 md:line-clamp-none">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold font-display mb-4 md:mb-6 leading-tight line-clamp-4 md:line-clamp-none bg-gradient-to-r from-primary via-blue-400 to-white bg-clip-text text-transparent">
           {title}
         </h1>
 
