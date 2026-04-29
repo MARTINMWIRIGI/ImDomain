@@ -68,9 +68,10 @@ export function Navbar() {
 
   const navItems = [
     { name: "Home", href: "/" },
+    { name: "Services", href: "/services" },
+    { name: "Market Entry Consulting", href: "/market-entry" },
+    { name: "Case Insights", href: "/insights" },
     { name: "About", href: "/about" },
-    { name: "Solutions", href: "/portfolio" },
-    { name: "Blog", href: "/blog" },
     { name: "Contact", href: "/contact" },
   ];
 
@@ -319,7 +320,7 @@ export function Navbar() {
               data-testid="link-nav-get-started"
               className="bg-primary text-white px-6 py-2.5 rounded-lg text-sm font-bold uppercase tracking-wide hover:bg-blue-700 transition-all hover:-translate-y-0.5 shadow-md shadow-primary/30"
             >
-              Get Started
+              Book Strategy Call
             </Link>
           </div>
 
