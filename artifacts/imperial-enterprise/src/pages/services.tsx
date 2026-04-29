@@ -1,4 +1,5 @@
 import { SEOHead, SEO_CONFIG } from "@/components/SEOHead";
+import { Hero } from "@/components/Hero";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { 
@@ -43,55 +44,16 @@ export default function Services() {
       <div className="overflow-hidden bg-white">
         
         {/* HERO SECTION */}
-        <section className="relative min-h-[90dvh] flex items-center pt-24 pb-12 overflow-hidden bg-white">
-          <div className="absolute inset-0 z-0">
-            <img 
-              src="/hero-bg.png" 
-              alt="Background" 
-              className="w-full h-full object-cover opacity-10 mix-blend-multiply"
-            />
-            <div className="absolute inset-0 bg-gradient-to-b from-white/50 via-white/80 to-white" />
-          </div>
-
-          {/* Floating elements */}
-          <motion.div 
-            animate={{ y: [0, -20, 0], rotate: [0, 10, 0] }} 
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-1/4 left-10 w-32 h-32 bg-primary/15 backdrop-blur-3xl rounded-2xl border border-white/30 shadow-xl z-10 hidden lg:block"
-          />
-          <motion.div 
-            animate={{ y: [0, 30, 0], rotate: [0, -15, 0] }} 
-            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-            className="absolute bottom-1/4 right-10 w-48 h-48 bg-secondary/8 backdrop-blur-3xl rounded-full border border-white/30 shadow-xl z-10 hidden lg:block"
-          />
-
-          <div className="container mx-auto px-6 relative z-20">
-            <div className="max-w-4xl mx-auto text-center">
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-              >
-                <div className="inline-block bg-white/80 backdrop-blur-sm border border-gray-200 px-4 py-1.5 rounded-full text-sm font-bold tracking-widest uppercase text-primary mb-8">
-                  Strategic Growth & Digital Services
-                </div>
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-secondary tracking-tighter leading-[1.1] mb-8">
-                  Helping SMEs, Startups & Brands in Kenya Grow, Compete, and Thrive Online
-                </h1>
-                <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed font-medium">
-                  We help businesses build strong digital presence, attract customers, and scale strategically using a combination of digital systems, business strategy, and growth consulting.
-                </p>
-                <p className="text-lg md:text-xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed font-medium">
-                  We don&apos;t just put your business online — we help you stay ahead of your competition and grow sustainably in a competitive market.
-                </p>
-                
-                <Link href="/contact" className="inline-block bg-secondary text-white px-8 py-4 rounded-lg font-bold uppercase tracking-wider hover:bg-secondary/90 transition-all hover:-translate-y-1 shadow-lg shadow-secondary/20">
-                  Book a Strategy Call
-                </Link>
-              </motion.div>
-            </div>
-          </div>
-        </section>
+        <Hero
+          title="Helping SMEs, Startups & Brands in Kenya Grow, Compete, and Thrive Online"
+          subtitle="We help businesses build strong digital presence, attract customers, and scale strategically using digital systems, business strategy, and growth consulting."
+          backgroundImage="/hero-services.jpg"
+          primaryCTA={{
+            text: "Book a Strategy Call",
+            href: "/contact",
+          }}
+          overlayOpacity="medium"
+        />
 
         {/* PROBLEM STATEMENT SECTION */}
         <section className="py-20 md:py-28 bg-gray-50">

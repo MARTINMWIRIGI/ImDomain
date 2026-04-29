@@ -1,4 +1,5 @@
 import { SEOHead, SEO_CONFIG } from "@/components/SEOHead";
+import { Hero } from "@/components/Hero";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { 
@@ -34,62 +35,20 @@ export default function Home() {
       <div className="overflow-hidden bg-white">
         
         {/* HERO SECTION */}
-        <section className="relative min-h-[100dvh] flex items-center pt-24 pb-12 overflow-hidden bg-white">
-          <div className="absolute inset-0 z-0">
-            <img 
-              src="/hero-bg.png" 
-              alt="Background" 
-              className="w-full h-full object-cover opacity-10 mix-blend-multiply"
-            />
-            <div className="absolute inset-0 bg-gradient-to-b from-white/50 via-white/80 to-white" />
-          </div>
-
-          {/* Floating elements */}
-          <motion.div 
-            animate={{ y: [0, -20, 0], rotate: [0, 10, 0] }} 
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-1/4 left-10 w-32 h-32 bg-primary/15 backdrop-blur-3xl rounded-2xl border border-white/30 shadow-xl z-10 hidden lg:block"
-          />
-          <motion.div 
-            animate={{ y: [0, 30, 0], rotate: [0, -15, 0] }} 
-            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-            className="absolute bottom-1/4 right-10 w-48 h-48 bg-secondary/8 backdrop-blur-3xl rounded-full border border-white/30 shadow-xl z-10 hidden lg:block"
-          />
-
-          <div className="container mx-auto px-6 relative z-20">
-            <div className="max-w-4xl mx-auto text-center">
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-              >
-                <div className="inline-block bg-white/80 backdrop-blur-sm border border-gray-200 px-4 py-1.5 rounded-full text-sm font-bold tracking-widest uppercase text-primary mb-8">
-                  Market Entry Consulting & Digital Growth
-                </div>
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-secondary tracking-tighter leading-[1.1] mb-8">
-                  Helping Businesses Grow Digitally and Enter East African Markets with Confidence
-                </h1>
-                <p className="text-lg md:text-xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed font-medium">
-                  We combine digital growth systems with market intelligence to help companies build visibility, identify real buyers, and expand into Kenya and beyond.
-                </p>
-                
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-                  <Link href="/contact" className="w-full sm:w-auto bg-secondary text-white px-8 py-4 rounded-lg font-bold uppercase tracking-wider hover:bg-secondary/90 transition-all hover:-translate-y-1 shadow-lg shadow-secondary/20 flex items-center justify-center gap-2 group">
-                    Book a Strategy Call
-                    <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                  <Link href="/services" className="w-full sm:w-auto bg-white text-secondary border-2 border-gray-300 px-8 py-4 rounded-lg font-bold uppercase tracking-wider hover:border-secondary transition-all hover:-translate-y-1">
-                    View Services
-                  </Link>
-                </div>
-
-                <p className="text-sm text-gray-500 font-semibold tracking-wide">
-                  Market Entry | Digital Growth | Business Intelligence | Kenya-based Consulting
-                </p>
-              </motion.div>
-            </div>
-          </div>
-        </section>
+        <Hero
+          title="Helping Businesses Grow Digitally and Enter East African Markets with Confidence"
+          subtitle="We combine digital growth systems with market intelligence to help companies build visibility, identify real buyers, and expand into Kenya and beyond."
+          backgroundImage="/hero-home.jpg"
+          primaryCTA={{
+            text: "Book a Strategy Call",
+            href: "/contact",
+          }}
+          secondaryCTA={{
+            text: "View Services",
+            href: "/services",
+          }}
+          overlayOpacity="medium"
+        />
 
         {/* PROBLEM AWARENESS SECTION */}
         <section className="py-20 md:py-28 bg-gray-50">

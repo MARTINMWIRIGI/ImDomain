@@ -1,4 +1,5 @@
 import { SEOHead, SEO_CONFIG } from "@/components/SEOHead";
+import { Hero } from "@/components/Hero";
 import { FAQSchema, DOMAINS_FAQS } from "@/components/FAQSchema";
 import { useState } from "react";
 import { motion } from "framer-motion";
@@ -146,29 +147,33 @@ export default function Domains() {
   return (
     <>
       <SEOHead {...SEO_CONFIG.domains} schema={domainsSchema} />
-<FAQSchema faqs={DOMAINS_FAQS} />
-    <div className="min-h-screen bg-white pt-28 pb-24">
+      <FAQSchema faqs={DOMAINS_FAQS} />
+      
+      {/* HERO SECTION */}
+      <Hero
+        title="Find Your Perfect Domain Name"
+        subtitle=".co.ke domains from just KSh 999/year. Secure your brand's online identity with free DNS and theft protection included."
+        backgroundImage="/hero-domains.jpg"
+        primaryCTA={{
+          text: "Search Now",
+          href: "https://truehost.co.ke/cloud/aff.php?aff=2464",
+        }}
+        overlayOpacity="medium"
+      />
 
-      {/* Hero / Search */}
-      <section className="relative py-16 md:py-24 bg-gradient-to-br from-secondary via-secondary/95 to-secondary/90 overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-10 right-10 w-72 h-72 rounded-full bg-primary/10 blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-white/5 blur-3xl" />
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808010_1px,transparent_1px),linear-gradient(to_bottom,#80808010_1px,transparent_1px)] bg-[size:32px_32px]" />
-        </div>
+    <div className="bg-white pb-24">
 
+      {/* Domain Listing Section */}
+      <section className="relative py-16 md:py-24 bg-white">
         <div className="container mx-auto px-6 relative z-10 text-center">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-            <span className="inline-block bg-primary/20 text-primary text-xs font-black uppercase tracking-widest px-4 py-1.5 rounded-full mb-6">
-              Domain Registration Kenya
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <span className="inline-block bg-primary/10 text-primary text-xs font-black uppercase tracking-widest px-4 py-1.5 rounded-full mb-6">
+              Available Domains
             </span>
-            <h1 className="text-4xl md:text-6xl font-black text-white tracking-tight mb-4">
-              Find Your Perfect <br />
-              <span className="text-primary">Domain Name</span>
-            </h1>
-            <p className="text-gray-300 text-lg mb-12 max-w-xl mx-auto">
-              Secure your brand's online identity today. .co.ke domains from just KSh 999/year. Free DNS, free theft protection included.
-            </p>
+            <h2 className="text-2xl md:text-4xl font-black text-secondary tracking-tight mb-4">
+              Find Your <span className="text-primary">Perfect Domain</span>
+            </h2>
+            <p className="text-gray-600 text-lg mb-12 max-w-2xl mx-auto"></p>
 
             {/* Search Bar */}
             <form onSubmit={handleSearch} className="max-w-2xl mx-auto">

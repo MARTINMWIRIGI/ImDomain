@@ -1,4 +1,5 @@
 import { SEOHead, SEO_CONFIG } from "@/components/SEOHead";
+import { Hero } from "@/components/Hero";
 import { motion } from "framer-motion";
 import { Mail, MapPin, Phone, ArrowRight, MessageCircle, Linkedin } from "lucide-react";
 import { useState } from "react";
@@ -43,28 +44,20 @@ export default function Contact() {
   return (
     <>
       <SEOHead {...SEO_CONFIG.contact} schema={contactSchema} />
-    <div className="pt-28 pb-0 min-h-screen bg-white">
+      
+      {/* HERO SECTION */}
+      <Hero
+        title="Ready to Grow? Let's Connect"
+        subtitle="Book a free market entry strategy call and discover how we can help your business dominate in Kenya and beyond."
+        backgroundImage="/hero-contact.jpg"
+        primaryCTA={{
+          text: "Schedule Your Call",
+          href: "#contact-form",
+        }}
+        overlayOpacity="medium"
+      />
 
-      {/* Page Header */}
-      <div className="container mx-auto px-6 mb-10">
-        <div className="max-w-4xl">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-7xl font-black text-secondary tracking-tight mb-4 uppercase"
-          >
-            INITIATE <span className="text-primary">CONTACT</span>
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-xl text-gray-600 font-medium"
-          >
-            Ready to dominate? Drop us a line and let's map out your path to the top.
-          </motion.p>
-        </div>
-      </div>
+    <div className="pb-0 bg-white">
 
       {/* Contact Quick Bar — phone, email, WhatsApp, LinkedIn in one row */}
       <div className="container mx-auto px-6 mb-10">

@@ -1,4 +1,5 @@
 import { SEOHead } from "@/components/SEOHead";
+import { Hero } from "@/components/Hero";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { ArrowRight, Calendar, Clock, Tag } from "lucide-react";
@@ -26,16 +27,16 @@ export default function Blog() {
         canonicalPath="/blog"
         schema={blogSchema}
       />
-      <div className="pt-32 pb-24 min-h-screen bg-white">
-        <section className="container mx-auto px-6">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-            <h1 className="text-4xl md:text-6xl font-black text-secondary tracking-tight mb-4">
-              THE IMPERIAL <span className="text-primary">BLOG</span>
-            </h1>
-            <p className="text-lg text-gray-500 max-w-2xl mb-16">
-              Expert insights, strategies, and guides to help Kenyan businesses dominate the digital landscape.
-            </p>
-          </motion.div>
+      {/* HERO SECTION */}
+      <Hero
+        title="The Imperial Blog"
+        subtitle="Expert insights on market entry, digital growth, and business strategy to help Kenyan entrepreneurs dominate their markets."
+        backgroundImage="/hero-blog.jpg"
+        overlayOpacity="medium"
+      />
+
+      <div className="pb-24 bg-white">
+        <section className="container mx-auto px-6 py-20">
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogArticles.map((article, i) => (
