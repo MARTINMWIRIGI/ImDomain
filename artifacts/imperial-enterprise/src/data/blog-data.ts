@@ -9,6 +9,7 @@ export interface BlogArticle {
   category: string;
   image: string;
   content: string;
+  keywords: string;
 }
 
 export const blogArticles: BlogArticle[] = [
@@ -22,6 +23,7 @@ export const blogArticles: BlogArticle[] = [
     author: "Imperial Enterprise",
     category: "Market Strategy",
     image: "/blog-1.jpg",
+    keywords: "market entry, East Africa, expansion strategy, Kenya business, market research, business planning",
     content: `
 # The Complete Guide to Market Entry in East Africa
 
@@ -59,6 +61,7 @@ Work with experienced consultants who understand the East African landscape and 
     author: "Imperial Enterprise",
     category: "Digital Growth",
     image: "/blog-2.jpg",
+    keywords: "digital growth, digital marketing, SEO, content strategy, customer acquisition, Kenya digital",
     content: `
 # 5 Digital Growth Strategies That Drive Results
 

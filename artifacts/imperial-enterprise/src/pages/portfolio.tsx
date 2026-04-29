@@ -228,8 +228,6 @@ export default function Portfolio() {
         overlayOpacity="medium"
       />
 
-      <section className="container mx-auto px-6 py-20">
-
       {/* Stats Bar */}
       <section className="bg-primary py-8 border-b-4 border-blue-700">
         <div className="container mx-auto px-6">
@@ -424,8 +422,6 @@ export default function Portfolio() {
           </div>
         </div>
       </section>
-
-    </div>
-</>
+    </>
   );
 }
