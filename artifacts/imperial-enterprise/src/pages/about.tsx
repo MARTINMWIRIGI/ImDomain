@@ -1,10 +1,29 @@
 import { SEOHead, SEO_CONFIG } from "@/components/SEOHead";
+import { Hero } from "@/components/Hero";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { Linkedin, ExternalLink, Code2, TrendingUp, Globe, Lightbulb, CheckCircle2, ArrowRight } from "lucide-react";
 import martinPhoto from "@assets/PSX_20251101_213933_1777047441895.png";
 
 export default function About() {
+  const aboutSchema = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About Imperial Enterprise",
+    "description": "Imperial Enterprise is Kenya's leading market entry and digital growth consulting firm helping SMEs, startups and brands grow online and expand into East African markets.",
+    "organization": {
+      "@type": "Organization",
+      "name": "Imperial Enterprise",
+      "url": "https://imperialenterprise.co.ke",
+      "foundingDate": "2019",
+      "areaServed": ["KE", "EA"],
+      "founder": {
+        "@type": "Person",
+        "name": "Martin Wirigi"
+      }
+    }
+  };
+
   const stats = [
     { label: "Years Building Brands", value: "5+" },
     { label: "Clients Served", value: "120+" },
@@ -27,32 +46,22 @@ export default function About() {
   ];
 
   return (
-<>
-    <SEOHead {...SEO_CONFIG.about} />
-    <div className="pt-32 pb-24 min-h-screen bg-white">
+    <>
+      <SEOHead {...SEO_CONFIG.about} schema={aboutSchema} />
+      
+      {/* HERO SECTION */}
+      <Hero
+        title="We Put Kenyan Businesses on the Global Map"
+        subtitle="Imperial Enterprise elevates the standard of digital presence in East Africa by combining technical precision with deep market understanding."
+        backgroundImage="/hero-about.jpg"
+        primaryCTA={{
+          text: "Work With Us",
+          href: "/contact",
+        }}
+        overlayOpacity="light"
+      />
 
-      {/* Mission / Hero */}
-      <section className="container mx-auto px-6 mb-32">
-        <div className="max-w-4xl">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-            <h1 className="text-4xl md:text-6xl font-black text-secondary tracking-tight mb-8 leading-tight">
-              WE PUT KENYAN BUSINESSES ON THE <span className="text-primary">GLOBAL MAP.</span>
-            </h1>
-            <div className="w-24 h-2 bg-primary mb-12"></div>
-            <div className="space-y-5 text-gray-600 max-w-3xl">
-              <p className="text-xl font-medium text-secondary leading-relaxed">
-                Imperial Enterprise was founded with a singular, aggressive mission: to elevate the standard of digital presence in East Africa.
-              </p>
-              <p className="text-lg leading-relaxed">
-                For too long, local businesses have settled for generic, uninspired digital marketing and web design. We saw incredible Kenyan companies with world-class products, hampered by sub-par digital identities that didn't reflect their true value.
-              </p>
-              <p className="text-lg leading-relaxed">
-                We built Imperial Enterprise to bridge that gap — combining technical precision with a deep understanding of the Nairobi hustle and the East African consumer. We are not just an agency; we are your growth partners, your digital architects, and your competitive advantage.
-              </p>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+    <div className="pb-24 bg-white">
 
       {/* Stats */}
       <section className="bg-secondary py-20 mb-32 relative overflow-hidden">

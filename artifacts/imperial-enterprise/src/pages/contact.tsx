@@ -1,10 +1,30 @@
 import { SEOHead, SEO_CONFIG } from "@/components/SEOHead";
+import { Hero } from "@/components/Hero";
 import { motion } from "framer-motion";
 import { Mail, MapPin, Phone, ArrowRight, MessageCircle, Linkedin } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 
 export default function Contact() {
+  const contactSchema = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact Imperial Enterprise",
+    "description": "Get in touch with Imperial Enterprise for a free market entry strategy consultation. Book your strategy call today.",
+    "organization": {
+      "@type": "Organization",
+      "name": "Imperial Enterprise",
+      "url": "https://imperialenterprise.co.ke",
+      "telephone": "+254703823398",
+      "email": "hello@imperialenterprise.co.ke",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "KE",
+        "addressLocality": "Nairobi"
+      }
+    }
+  };
+
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -22,30 +42,22 @@ export default function Contact() {
   };
 
   return (
-<>
-    <SEOHead {...SEO_CONFIG.contact} />
-    <div className="pt-28 pb-0 min-h-screen bg-white">
+    <>
+      <SEOHead {...SEO_CONFIG.contact} schema={contactSchema} />
+      
+      {/* HERO SECTION */}
+      <Hero
+        title="Ready to Grow? Let's Connect"
+        subtitle="Book a free market entry strategy call and discover how we can help your business dominate in Kenya and beyond."
+        backgroundImage="/hero-contact.jpg"
+        primaryCTA={{
+          text: "Schedule Your Call",
+          href: "#contact-form",
+        }}
+        overlayOpacity="light"
+      />
 
-      {/* Page Header */}
-      <div className="container mx-auto px-6 mb-10">
-        <div className="max-w-4xl">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-7xl font-black text-secondary tracking-tight mb-4 uppercase"
-          >
-            INITIATE <span className="text-primary">CONTACT</span>
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-xl text-gray-600 font-medium"
-          >
-            Ready to dominate? Drop us a line and let's map out your path to the top.
-          </motion.p>
-        </div>
-      </div>
+    <div className="pb-0 bg-white">
 
       {/* Contact Quick Bar — phone, email, WhatsApp, LinkedIn in one row */}
       <div className="container mx-auto px-6 mb-10">

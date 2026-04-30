@@ -1,28 +1,42 @@
 import { SEOHead } from "@/components/SEOHead";
+import { Hero } from "@/components/Hero";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { ArrowRight, Calendar, Clock, Tag } from "lucide-react";
 import { blogArticles } from "@/data/blog-data";
 
 export default function Blog() {
+  const blogSchema = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Imperial Enterprise Blog",
+    "description": "Expert insights on digital marketing, SEO, web hosting, and business strategy for Kenyan SMEs and startups",
+    "url": "https://imperialenterprise.co.ke/blog",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Imperial Enterprise"
+    }
+  };
+
   return (
     <>
       <SEOHead
-        title="Blog | Digital Marketing, SEO & Web Hosting Tips Kenya | Imperial Enterprise"
-        description="Expert insights on web hosting, SEO, digital marketing, and web development for Kenyan businesses. Stay ahead with tips from Nairobi's premier digital agency."
-        keywords="digital marketing blog Kenya, SEO tips Kenya, web hosting guide Kenya, Nairobi business tips"
+        title="Blog | Digital Marketing, SEO, Business Strategy & Market Entry Insights | Imperial Enterprise"
+        description="Expert insights on market entry, digital growth, business strategy, SEO, and scaling for Kenyan SMEs and startups. Actionable guides from Kenya's leading growth consultants."
+        keywords="business blog Kenya, market entry insights, digital growth tips, SEO blog Kenya, startup strategy, business strategy Kenya, consulting blog"
         canonicalPath="/blog"
+        schema={blogSchema}
       />
-      <div className="pt-32 pb-24 min-h-screen bg-white">
-        <section className="container mx-auto px-6">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-            <h1 className="text-4xl md:text-6xl font-black text-secondary tracking-tight mb-4">
-              THE IMPERIAL <span className="text-primary">BLOG</span>
-            </h1>
-            <p className="text-lg text-gray-500 max-w-2xl mb-16">
-              Expert insights, strategies, and guides to help Kenyan businesses dominate the digital landscape.
-            </p>
-          </motion.div>
+      {/* HERO SECTION */}
+      <Hero
+        title="The Imperial Blog"
+        subtitle="Expert insights on market entry, digital growth, and business strategy to help Kenyan entrepreneurs dominate their markets."
+        backgroundImage="/hero-blog.jpg"
+        overlayOpacity="light"
+      />
+
+      <div className="pb-24 bg-white">
+        <section className="container mx-auto px-6 py-20">
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogArticles.map((article, i) => (

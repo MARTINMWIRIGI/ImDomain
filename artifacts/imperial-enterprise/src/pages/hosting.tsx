@@ -1,4 +1,5 @@
 import { SEOHead, SEO_CONFIG } from "@/components/SEOHead";
+import { Hero } from "@/components/Hero";
 import { FAQSchema, HOSTING_FAQS } from "@/components/FAQSchema";
 import { motion } from "framer-motion";
 import {
@@ -8,6 +9,22 @@ import {
 } from "lucide-react";
 
 const BASE = "https://truehost.co.ke/cloud/aff.php?aff=2464";
+
+const hostingSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Web Hosting Kenya - Imperial Enterprise",
+  "description": "Fast, reliable, affordable web hosting in Kenya from KSh 2,500/year. Free SSL, cPanel, daily backups, 99.9% uptime, and local support.",
+  "brand": {
+    "@type": "Brand",
+    "name": "Imperial Enterprise"
+  },
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "KES",
+    "lowestPrice": "2500"
+  }
+};
 
 const plans = [
   {
@@ -192,19 +209,28 @@ const features = [
 
 export default function Hosting() {
   return (
-<>
-    <SEOHead {...SEO_CONFIG.hosting} />
-<FAQSchema faqs={HOSTING_FAQS} />
-    <div className="min-h-screen bg-white pt-28 pb-24">
+    <>
+      <SEOHead {...SEO_CONFIG.hosting} schema={hostingSchema} />
+      <FAQSchema faqs={HOSTING_FAQS} />
+      
+      {/* HERO SECTION */}
+      <Hero
+        title="Fast, Reliable, Affordable Web Hosting in Kenya"
+        subtitle="Lightning-speed servers, free SSL, daily backups, and local Kenyan support. Starting from just KSh 2,500/year."
+        backgroundImage="/hero-hosting.jpg"
+        primaryCTA={{
+          text: "Get Started Now",
+          href: "https://truehost.co.ke/cloud/aff.php?aff=2464",
+        }}
+        overlayOpacity="light"
+      />
 
-      {/* Hero Header */}
-      <section className="relative py-16 md:py-24 bg-gradient-to-br from-slate-50 via-white to-amber-50/30 overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute -top-20 -right-20 w-96 h-96 rounded-full bg-primary/5 blur-3xl" />
-          <div className="absolute bottom-0 -left-10 w-64 h-64 rounded-full bg-secondary/5 blur-3xl" />
-        </div>
+    <div className="bg-white pb-24">
+
+      {/* Features Section Header */}
+      <section className="relative py-16 md:py-24 bg-white">
         <div className="container mx-auto px-6 text-center relative z-10">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <span className="inline-block bg-primary/10 text-primary text-xs font-black uppercase tracking-widest px-4 py-1.5 rounded-full mb-6">
               Web Hosting Kenya
             </span>

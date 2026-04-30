@@ -1,4 +1,5 @@
 import { SEOHead, SEO_CONFIG } from "@/components/SEOHead";
+import { Hero } from "@/components/Hero";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import {
@@ -6,6 +7,17 @@ import {
   Lightbulb, Briefcase, Award, TrendingUp, CheckCircle2,
   Star, Quote, Zap, BarChart3, Users, MessageCircle,
 } from "lucide-react";
+
+const portfolioSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Portfolio - Imperial Enterprise Case Studies",
+  "description": "Browse case studies and success stories of how Imperial Enterprise helped Kenyan businesses grow, enter new markets, and scale sustainably.",
+  "organization": {
+    "@type": "Organization",
+    "name": "Imperial Enterprise"
+  }
+};
 
 const services = [
   {
@@ -201,31 +213,20 @@ const testimonials = [
 
 export default function Portfolio() {
   return (
-<>
-    <SEOHead {...SEO_CONFIG.portfolio} />
-    
-    <div className="min-h-screen bg-white">
-
-      {/* Header */}
-      <section className="pt-32 pb-20 bg-secondary relative overflow-hidden">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:32px_32px]" />
-        <div className="absolute -top-20 -right-20 w-96 h-96 rounded-full bg-primary/15 blur-3xl" />
-        <div className="container mx-auto px-6 relative z-10">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="max-w-4xl">
-            <span className="inline-block bg-primary/20 text-primary text-xs font-black uppercase tracking-widest px-4 py-1.5 rounded-full mb-6">
-              Our Services & Capabilities
-            </span>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white tracking-tight mb-6 leading-tight">
-              Everything Your <br />
-              <span className="text-primary">Business Needs</span>
-              <br />To Dominate Online
-            </h1>
-            <p className="text-xl text-blue-100 leading-relaxed max-w-2xl">
-              From SEO and AI automations to sales training and business consulting — we deliver end-to-end digital growth solutions built for ambitious Kenyan businesses.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+    <>
+      <SEOHead {...SEO_CONFIG.portfolio} schema={portfolioSchema} />
+      
+      {/* HERO SECTION */}
+      <Hero
+        title="Our Work Speaks Louder Than Words"
+        subtitle="Every project is a masterpiece. Every client is a long-term partner. Explore how we've transformed businesses across Kenya."
+        backgroundImage="/hero-portfolio.jpg"
+        primaryCTA={{
+          text: "Start Your Project",
+          href: "/contact",
+        }}
+        overlayOpacity="light"
+      />
 
       {/* Stats Bar */}
       <section className="bg-primary py-8 border-b-4 border-blue-700">
@@ -421,8 +422,6 @@ export default function Portfolio() {
           </div>
         </div>
       </section>
-
-    </div>
-</>
+    </>
   );
 }
