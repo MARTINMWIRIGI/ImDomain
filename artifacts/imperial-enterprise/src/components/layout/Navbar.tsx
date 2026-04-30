@@ -124,124 +124,12 @@ export function Navbar() {
               Home
             </Link>
 
-            {/* Services Dropdown */}
-            <div className="relative" onMouseEnter={() => openMenu("services")} onMouseLeave={closeMenu}>
-              <button
-                className={`flex items-center gap-1 px-4 py-2 text-sm font-semibold rounded-lg transition-colors hover:bg-primary/10 hover:text-primary ${location === "/services" ? "text-primary bg-primary/10" : "text-secondary"}`}
-              >
-                Services
-                <ChevronDown size={14} className={`transition-transform duration-200 ${openDropdown === "services" ? "rotate-180" : ""}`} />
-              </button>
-              <AnimatePresence>
-                {openDropdown === "services" && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 10, scale: 0.97 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: 10, scale: 0.97 }}
-                    transition={{ duration: 0.15 }}
-                    onMouseEnter={() => openMenu("services")}
-                    onMouseLeave={closeMenu}
-                    className="absolute top-full left-0 mt-2 w-[480px] bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden"
-                  >
-                    <div className="p-2">
-                      <p className="text-[10px] font-black uppercase tracking-widest text-gray-400 px-3 py-2">What We Do</p>
-                      <div className="grid grid-cols-2 gap-1">
-                        {serviceItems.map((item) => (
-                          <Link
-                            key={item.name}
-                            href={item.href}
-                            className="flex items-start gap-3 px-3 py-3 rounded-xl hover:bg-primary/5 group transition-colors"
-                          >
-                            <div className="w-9 h-9 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white transition-colors mt-0.5">
-                              {item.icon}
-                            </div>
-                            <div>
-                              <p className="text-sm font-bold text-secondary group-hover:text-primary transition-colors">{item.name}</p>
-                              <p className="text-xs text-gray-400 mt-0.5">{item.desc}</p>
-                            </div>
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-                    <div className="bg-primary/5 px-5 py-3 flex items-center justify-between border-t border-gray-100">
-                      <p className="text-xs text-gray-500 font-medium">Not sure what you need?</p>
-                      <Link href="/contact" className="text-xs font-bold text-primary hover:text-secondary transition-colors flex items-center gap-1">
-                        Book a free call <ArrowRight size={12} />
-                      </Link>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
+            {/* Services Link */}
+            <Link href="/services" className={`px-4 py-2 text-sm font-semibold rounded-lg transition-colors hover:bg-primary/10 hover:text-primary ${location === "/services" ? "text-primary bg-primary/10" : "text-secondary"}`}>
+              Services
+            </Link>
 
-            {/* Hosting Dropdown */}
-            <div className="relative" onMouseEnter={() => openMenu("hosting")} onMouseLeave={closeMenu}>
-              <button
-                className={`flex items-center gap-1 px-4 py-2 text-sm font-semibold rounded-lg transition-colors hover:bg-primary/10 hover:text-primary ${location === "/hosting" ? "text-primary bg-primary/10" : "text-secondary"}`}
-              >
-                Hosting
-                <ChevronDown size={14} className={`transition-transform duration-200 ${openDropdown === "hosting" ? "rotate-180" : ""}`} />
-              </button>
-              <AnimatePresence>
-                {openDropdown === "hosting" && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 10, scale: 0.97 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: 10, scale: 0.97 }}
-                    transition={{ duration: 0.15 }}
-                    onMouseEnter={() => openMenu("hosting")}
-                    onMouseLeave={closeMenu}
-                    className="absolute top-full left-0 mt-2 w-[560px] bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden"
-                  >
-                    <div className="p-2">
-                      <div className="grid grid-cols-2 gap-0">
-                        <div className="p-2 border-r border-gray-100">
-                          <p className="text-[10px] font-black uppercase tracking-widest text-gray-400 px-3 py-2">Hosting Plans</p>
-                          {hostingItems.slice(0, 6).map((item) => (
-                            <a key={item.name} href={item.href} target="_blank" rel="noopener noreferrer"
-                              className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-primary/5 group transition-colors"
-                            >
-                              <div className="w-7 h-7 rounded-lg bg-gray-100 text-secondary flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white transition-colors">
-                                {item.icon}
-                              </div>
-                              <div>
-                                <p className="text-sm font-bold text-secondary group-hover:text-primary transition-colors">{item.name}</p>
-                                <p className="text-xs text-gray-400">{item.desc}</p>
-                              </div>
-                            </a>
-                          ))}
-                        </div>
-                        <div className="p-2">
-                          <p className="text-[10px] font-black uppercase tracking-widest text-gray-400 px-3 py-2">Email & Add-ons</p>
-                          {hostingItems.slice(6).map((item) => (
-                            <a key={item.name} href={item.href} target="_blank" rel="noopener noreferrer"
-                              className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-primary/5 group transition-colors"
-                            >
-                              <div className="w-7 h-7 rounded-lg bg-gray-100 text-secondary flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white transition-colors">
-                                {item.icon}
-                              </div>
-                              <div>
-                                <p className="text-sm font-bold text-secondary group-hover:text-primary transition-colors">{item.name}</p>
-                                <p className="text-xs text-gray-400">{item.desc}</p>
-                              </div>
-                            </a>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                    <div className="bg-primary/5 px-5 py-3 flex items-center justify-between border-t border-gray-100">
-                      <Link href="/hosting" className="text-xs font-bold text-primary hover:text-secondary transition-colors flex items-center gap-1">
-                        View all hosting plans <ArrowRight size={12} />
-                      </Link>
-                      <a href="https://wa.me/+254703823398" target="_blank" rel="noopener noreferrer"
-                        className="text-xs font-bold text-[#25D366] flex items-center gap-1 hover:text-secondary transition-colors">
-                        <MessageCircle size={12} /> Need help choosing?
-                      </a>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
+
 
             {/* Domains Dropdown */}
             <div className="relative" onMouseEnter={() => openMenu("domains")} onMouseLeave={closeMenu}>
@@ -260,32 +148,23 @@ export function Navbar() {
                     transition={{ duration: 0.15 }}
                     onMouseEnter={() => openMenu("domains")}
                     onMouseLeave={closeMenu}
-                    className="absolute top-full left-0 mt-2 w-[400px] bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden"
+                    className="absolute top-full left-0 mt-2 w-[320px] bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden"
                   >
-                    <div className="p-2">
-                      <p className="text-[10px] font-black uppercase tracking-widest text-gray-400 px-3 py-2">Domain Services</p>
-                      {domainItems.map((item) => (
-                        <a key={item.name} href={item.href} target="_blank" rel="noopener noreferrer"
-                          className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-primary/5 group transition-colors"
-                        >
-                          <div className="w-8 h-8 rounded-lg bg-gray-100 text-secondary flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white transition-colors">
-                            {item.icon}
+                    <div className="p-3">
+                      <a href={domainItems[0].href} target="_blank" rel="noopener noreferrer"
+                        className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-primary/5 group transition-colors"
+                      >
+                        <div className="w-8 h-8 rounded-lg bg-gray-100 text-secondary flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white transition-colors">
+                          {domainItems[0].icon}
+                        </div>
+                        <div className="flex-1">
+                          <div className="flex items-center gap-2">
+                            <p className="text-sm font-bold text-secondary group-hover:text-primary transition-colors">{domainItems[0].name}</p>
+                            <span className="text-[9px] font-black uppercase tracking-wide bg-red-100 text-red-500 px-1.5 py-0.5 rounded-full">HOT</span>
                           </div>
-                          <div className="flex-1">
-                            <div className="flex items-center gap-2">
-                              <p className="text-sm font-bold text-secondary group-hover:text-primary transition-colors">{item.name}</p>
-                              {item.hot && <span className="text-[9px] font-black uppercase tracking-wide bg-red-100 text-red-500 px-1.5 py-0.5 rounded-full">HOT</span>}
-                            </div>
-                            <p className="text-xs text-gray-400">{item.desc}</p>
-                          </div>
-                        </a>
-                      ))}
-                    </div>
-                    <div className="bg-primary/5 px-5 py-3 flex items-center justify-between border-t border-gray-100">
-                      <Link href="/domains" className="text-xs font-bold text-primary hover:text-secondary transition-colors flex items-center gap-1">
-                        View all domain tools <ArrowRight size={12} />
-                      </Link>
-                      <span className="text-xs text-gray-400">.co.ke from <strong className="text-primary">KSh 999</strong>/yr</span>
+                          <p className="text-xs text-gray-400">{domainItems[0].desc}</p>
+                        </div>
+                      </a>
                     </div>
                   </motion.div>
                 )}
