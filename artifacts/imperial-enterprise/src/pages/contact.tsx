@@ -8,17 +8,36 @@ export default function Contact() {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    const name    = (data.get("fullName")  as string) || "";
+    const email   = (data.get("email")     as string) || "";
+    const phone   = (data.get("phone")     as string) || "Not provided";
+    const service = (data.get("service")   as string) || "Not specified";
+    const details = (data.get("details")   as string) || "";
+
+    const msg = encodeURIComponent(
+      `*New Strategy Call Request \u{1F680}*\n\n` +
+      `*Name:* ${name}\n` +
+      `*Email:* ${email}\n` +
+      `*Phone:* ${phone}\n` +
+      `*Service:* ${service}\n\n` +
+      `*Project Details:*\n${details}`
+    );
+
+    window.open(`https://wa.me/254703823398?text=${msg}`, "_blank");
+
     setTimeout(() => {
       setIsSubmitting(false);
       toast({
-        title: "Message Sent Successfully",
-        description: "A digital strategist will be in touch within 24 hours.",
+        title: "Request Sent via WhatsApp!",
+        description: "Your strategy call request has been sent. We'll respond shortly.",
       });
-      (e.target as HTMLFormElement).reset();
-    }, 1500);
+      form.reset();
+    }, 800);
   };
 
   return (
@@ -128,6 +147,7 @@ export default function Contact() {
                   <label className="text-sm font-bold text-secondary uppercase tracking-wider">Full Name</label>
                   <input
                     type="text"
+                    name="fullName"
                     required
                     className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-4 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                     placeholder="John Doe"
@@ -137,6 +157,7 @@ export default function Contact() {
                   <label className="text-sm font-bold text-secondary uppercase tracking-wider">Email Address</label>
                   <input
                     type="email"
+                    name="email"
                     required
                     className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-4 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                     placeholder="john@company.com"
@@ -149,13 +170,15 @@ export default function Contact() {
                   <label className="text-sm font-bold text-secondary uppercase tracking-wider">Phone Number</label>
                   <input
                     type="tel"
+                    name="phone"
                     className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-4 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                     placeholder="+254 700 000 000"
                   />
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-bold text-secondary uppercase tracking-wider">Service of Interest</label>
-                  <select className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-4 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all appearance-none">
+                  <select name="service"
+                    className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-4 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all appearance-none">
                     <option value="">Select a service...</option>
                     <option value="seo">SEO Services</option>
                     <option value="gbp">Google Business Profile</option>
@@ -176,6 +199,7 @@ export default function Contact() {
                 <label className="text-sm font-bold text-secondary uppercase tracking-wider">Project Details</label>
                 <textarea
                   rows={5}
+                  name="details"
                   required
                   className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-4 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none"
                   placeholder="Tell us about your business goals and current challenges..."
