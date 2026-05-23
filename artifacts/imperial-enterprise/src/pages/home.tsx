@@ -391,20 +391,53 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="py-24 bg-primary relative overflow-hidden">
-        <div className="absolute inset-0 bg-secondary/10 mix-blend-multiply" />
-        <div className="container mx-auto px-6 relative z-10 text-center">
-          <h2 className="text-4xl md:text-6xl font-black text-white tracking-tight mb-8">
-            READY TO TAKE OVER?
-          </h2>
-          <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
-            Stop settling for mediocre digital results. Partner with Imperial Enterprise and build a brand that commands attention.
-          </p>
-          <Link href="/contact" className="inline-flex items-center gap-2 bg-secondary text-white px-10 py-5 rounded-sm font-bold uppercase tracking-widest hover:bg-gray-900 transition-all hover:scale-105 shadow-2xl">
-            Book Your Strategy Call
-            <ArrowRight size={20} />
-          </Link>
+            {/* Portfolio CTA */}
+      <section className="py-24 bg-secondary relative overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
+        <div className="absolute top-0 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="flex flex-col lg:flex-row items-center gap-16">
+            <div className="max-w-2xl">
+              <span className="inline-block bg-primary/20 text-primary text-xs font-black uppercase tracking-widest px-4 py-1.5 rounded-full mb-6">
+                Our Work
+              </span>
+              <h2 className="text-4xl md:text-6xl font-black text-white tracking-tight mb-6 leading-[1.05]">
+                SEE THE RESULTS<br className="hidden md:block" /> WE DELIVER
+              </h2>
+              <p className="text-xl text-gray-300 mb-10 leading-relaxed">
+                Browse our portfolio of completed and ongoing projects — websites, brands, and digital campaigns engineered for real results in the Kenyan market.
+              </p>
+              <a
+                href="https://portfolio.imperialenterprise.co.ke"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-primary text-white px-10 py-5 rounded-sm font-bold uppercase tracking-widest hover:bg-blue-700 transition-all hover:scale-105 shadow-2xl shadow-primary/30"
+              >
+                View Our Portfolio
+                <ArrowRight size={20} />
+              </a>
+            </div>
+            <div className="shrink-0 grid grid-cols-2 gap-4 w-full lg:w-auto lg:min-w-[320px]">
+              {[
+                { value: "80+",  label: "Projects Delivered" },
+                { value: "120+", label: "Happy Clients" },
+                { value: "15+",  label: "Ongoing Builds" },
+                { value: "5+",   label: "Years of Impact" },
+              ].map((stat, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="bg-white/10 rounded-2xl p-6 text-center border border-white/10 backdrop-blur-sm"
+                >
+                  <p className="text-3xl font-black text-primary mb-1">{stat.value}</p>
+                  <p className="text-xs font-bold uppercase tracking-widest text-gray-300">{stat.label}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
     </div>
