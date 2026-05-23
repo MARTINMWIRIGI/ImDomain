@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { SEOHead, SEO_CONFIG } from "@/components/SEOHead";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
@@ -5,6 +6,18 @@ import { Linkedin, ExternalLink, Code2, TrendingUp, Globe, Lightbulb, CheckCircl
 import martinPhoto from "@assets/PSX_20251101_213933_1777047441895.png";
 
 export default function About() {
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://platform.linkedin.com/badges/js/profile.js";
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+    return () => {
+      const s = document.querySelector('script[src="https://platform.linkedin.com/badges/js/profile.js"]');
+      if (s) document.body.removeChild(s);
+    };
+  }, []);
+
   const stats = [
     { label: "Years Building Brands", value: "5+" },
     { label: "Clients Served", value: "120+" },
@@ -226,6 +239,95 @@ export default function About() {
                 </Link>
               </div>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Founder's Message */}
+      <section className="py-24 bg-white border-t border-gray-100">
+        <div className="container mx-auto px-6">
+          <div className="max-w-5xl mx-auto">
+            <div className="mb-12">
+              <span className="inline-block bg-primary/10 text-primary text-xs font-black uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
+                A Message from the Founder
+              </span>
+              <h2 className="text-3xl md:text-5xl font-black text-secondary tracking-tight">IN HIS OWN WORDS</h2>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+
+              {/* Quote Block */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="relative"
+              >
+                <div className="absolute -top-4 -left-2 text-9xl font-serif text-primary/10 leading-none select-none pointer-events-none">“</div>
+                <blockquote className="relative z-10 pl-2 space-y-5">
+                  <p className="text-xl font-semibold text-secondary leading-relaxed">
+                    Every business I've worked with has had one thing in common — enormous potential that their digital presence wasn't reflecting.
+                  </p>
+                  <p className="text-lg text-gray-600 leading-relaxed">
+                    When I built Imperial Enterprise, I made a promise: to fight for every client's brand with the same hunger I'd bring to my own. The Kenyan market is competitive, the digital space is noisy, and mediocrity is expensive.
+                  </p>
+                  <p className="text-lg text-gray-600 leading-relaxed">
+                    We're not here to deliver reports and templates. We're here to build businesses that command respect — online and offline. When you work with Imperial Enterprise, you get my full attention, my full team, and my full commitment to your growth.
+                  </p>
+                  <footer className="pt-6 border-t border-gray-100">
+                    <p className="font-black text-secondary text-lg">Martin Mwirigi</p>
+                    <p className="text-sm text-gray-500 font-medium">Founder &amp; CEO, Imperial Enterprise</p>
+                  </footer>
+                </blockquote>
+              </motion.div>
+
+              {/* LinkedIn Badge + Trust Points */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="flex flex-col gap-8"
+              >
+                <div>
+                  <p className="text-xs font-black uppercase tracking-widest text-gray-400 mb-4">Verified Professional Profile</p>
+                  <div
+                    className="badge-base LI-profile-badge"
+                    data-locale="en_US"
+                    data-size="medium"
+                    data-theme="dark"
+                    data-type="HORIZONTAL"
+                    data-vanity="martinmwirigi"
+                    data-version="v1"
+                  >
+                    <a
+                      className="badge-base__link LI-simple-link"
+                      href="https://ke.linkedin.com/in/martinmwirigi?trk=profile-badge"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Martin Mwirigi
+                    </a>
+                  </div>
+                </div>
+
+                <div className="bg-gray-50 border border-gray-100 rounded-2xl p-6">
+                  <p className="text-xs font-black uppercase tracking-widest text-gray-400 mb-4">Founder's Commitment to You</p>
+                  <ul className="space-y-4">
+                    {[
+                      "Transparent reporting — you always know exactly where your investment goes",
+                      "Honest strategy — we tell you what you need, not what sounds impressive",
+                      "Long-term thinking — we grow with you, not just for a single project",
+                      "Direct access — you speak to Martin, not a junior account manager",
+                    ].map((item) => (
+                      <li key={item} className="flex items-start gap-3 text-sm text-gray-700">
+                        <CheckCircle2 size={16} className="text-primary shrink-0 mt-0.5" />
+                        <span className="font-medium">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </motion.div>
+            </div>
           </div>
         </div>
       </section>
