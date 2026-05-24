@@ -343,63 +343,53 @@ export default function Home() {
           </div>
         </section>
 
-        {/* NEWSLETTER SECTION */}
-        <section className="relative py-16 md:py-24 bg-gradient-to-br from-primary/10 via-secondary/5 to-transparent overflow-hidden">
-          <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-primary/5 blur-3xl" />
-            <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-secondary/5 blur-3xl" />
-          </div>
-
+        {/* PORTFOLIO CTA */}
+        <section className="py-24 bg-secondary relative overflow-hidden">
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
+          <div className="absolute top-0 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
           <div className="container mx-auto px-6 relative z-10">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="max-w-4xl mx-auto"
-            >
-              <div className="grid md:grid-cols-2 gap-8 items-center bg-white rounded-2xl shadow-soft-lg p-8 md:p-12 border border-gray-100">
-                {/* Newsletter Info */}
-                <div>
-                  <h3 className="text-3xl md:text-4xl font-black text-secondary mb-4">
-                    Stay <span className="text-primary">Ahead</span> of Market Trends
-                  </h3>
-                  <p className="text-gray-600 mb-6 text-lg">
-                    Get weekly insights on digital growth strategies, business scaling, and growth hacks. Join 500+ Kenyan entrepreneurs building their empires.
-                  </p>
-                  <ul className="space-y-3 mb-8">
-                    <li className="flex items-start gap-3">
-                      <CheckCircle2 size={20} className="text-primary mt-1 flex-shrink-0" />
-                      <span className="text-gray-700 font-medium">Digital growth strategies & tips</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <CheckCircle2 size={20} className="text-primary mt-1 flex-shrink-0" />
-                      <span className="text-gray-700 font-medium">Business scaling case studies</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <CheckCircle2 size={20} className="text-primary mt-1 flex-shrink-0" />
-                      <span className="text-gray-700 font-medium">Exclusive tools & resources</span>
-                    </li>
-                  </ul>
-                </div>
-
-                {/* Newsletter CTA */}
-                <div className="flex flex-col items-center justify-center p-8 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-xl border border-primary/10">
-                  <Mail size={48} className="text-primary mb-4" />
-                  <h4 className="text-2xl font-bold text-secondary mb-2 text-center">Join the Movement</h4>
-                  <p className="text-gray-600 text-center mb-6 text-sm">Get exclusive growth insights delivered weekly</p>
-                  <a
-                    href="https://newsletter.imperialenterprise.co.ke"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full bg-primary text-white px-6 py-3 rounded-lg font-bold text-center hover:bg-blue-700 transition-all hover:shadow-lg inline-flex items-center justify-center gap-2 group"
-                  >
-                    <Mail size={18} />
-                    Subscribe Now
-                  </a>
-                  <p className="text-xs text-gray-400 mt-4 text-center">No spam. Unsubscribe anytime.</p>
-                </div>
+            <div className="flex flex-col lg:flex-row items-center gap-16">
+              <div className="max-w-2xl">
+                <span className="inline-block bg-primary/20 text-primary text-xs font-black uppercase tracking-widest px-4 py-1.5 rounded-full mb-6">
+                  Our Work
+                </span>
+                <h2 className="text-4xl md:text-6xl font-black text-white tracking-tight mb-6 leading-[1.05]">
+                  SEE THE RESULTS<br className="hidden md:block" /> WE DELIVER
+                </h2>
+                <p className="text-xl text-gray-300 mb-10 leading-relaxed">
+                  Browse our portfolio of completed and ongoing projects — websites, brands, and digital campaigns engineered for real results in the Kenyan market.
+                </p>
+                <a
+                  href="https://portfolio.imperialenterprise.co.ke"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-primary text-white px-10 py-5 rounded-sm font-bold uppercase tracking-widest hover:bg-blue-700 transition-all hover:scale-105 shadow-2xl shadow-primary/30"
+                >
+                  View Our Portfolio
+                  <ArrowRight size={20} />
+                </a>
               </div>
-            </motion.div>
+              <div className="shrink-0 grid grid-cols-2 gap-4 w-full lg:w-auto lg:min-w-[320px]">
+                {[
+                  { value: "80+",  label: "Projects Delivered" },
+                  { value: "120+", label: "Happy Clients" },
+                  { value: "15+",  label: "Ongoing Builds" },
+                  { value: "5+",   label: "Years of Impact" },
+                ].map((stat, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                    className="bg-white/10 rounded-2xl p-6 text-center border border-white/10 backdrop-blur-sm"
+                  >
+                    <p className="text-3xl font-black text-primary mb-1">{stat.value}</p>
+                    <p className="text-xs font-bold uppercase tracking-widest text-gray-300">{stat.label}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 
