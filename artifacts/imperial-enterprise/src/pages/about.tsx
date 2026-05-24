@@ -181,7 +181,7 @@ export default function About() {
 
               <div className="space-y-5 text-gray-600 mb-10 text-base leading-relaxed">
                 <p>
-                  Martin is the architect behind Imperial Enterprise's relentless drive for digital excellence. With a rare combination of full-stack development expertise and high-performance digital marketing strategy, he brings a 360-degree skill set that most agencies scramble to assemble across entire teams.
+                  Martin is the architect behind Imperial Enterprise's relentless drive for digital excellence. With a rare combination of development expertise and high-performance digital marketing strategy, he brings a 360-degree skill set that most agencies scramble to assemble across entire teams.
                 </p>
                 <p>
                   Born and built in Nairobi, Martin understands the nuances of the Kenyan market — the consumer behaviors, the mobile-first reality, and the competitive landscape — at a level that external consultants simply cannot match. He has helped businesses ranging from ambitious early-stage startups to established enterprises redefine their digital presence and unlock new revenue channels.
@@ -272,17 +272,17 @@ export default function About() {
                 <div className="absolute -top-4 -left-2 text-9xl font-serif text-primary/10 leading-none select-none pointer-events-none">“</div>
                 <blockquote className="relative z-10 pl-2 space-y-5">
                   <p className="text-xl font-semibold text-secondary leading-relaxed">
-                    Every business I’ve worked with has had one thing in common — enormous potential that their digital presence wasn’t reflecting.
+                    Every startup, every brand, every business I’ve worked with has had one thing in common — enormous potential that their digital presence wasn’t reflecting.
                   </p>
                   <p className="text-lg text-gray-600 leading-relaxed">
-                    When I built Imperial Enterprise, I made a promise: to fight for every client’s brand with the same hunger I’d bring to my own. The Kenyan market is competitive, the digital space is noisy, and mediocrity is expensive.
+                    I made a promise to fight for every client’s brand with the same hunger I’d bring to my own. The Kenyan market is competitive, the digital space is noisy, and mediocrity is expensive.
                   </p>
                   <p className="text-lg text-gray-600 leading-relaxed">
-                    We’re not here to deliver reports and templates. We’re here to build businesses that command respect — online and offline. When you work with Imperial Enterprise, you get my full attention, my full team, and my full commitment to your growth.
+                    We’re here to build businesses that command respect — online and offline. When you work with Imperial Enterprise, you get full attention, the full team, and full commitment to your growth.
                   </p>
                   <footer className="pt-6 border-t border-gray-100">
                     <p className="font-black text-secondary text-lg">Martin Mwirigi</p>
-                    <p className="text-sm text-gray-500 font-medium">Founder &amp; CEO, Imperial Enterprise</p>
+                    <p className="text-sm text-gray-500 font-medium">Founder, Imperial Enterprise</p>
                   </footer>
                 </blockquote>
               </motion.div>
