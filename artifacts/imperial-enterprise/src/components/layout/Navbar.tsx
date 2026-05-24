@@ -11,7 +11,7 @@ const navLinks = [
   { name: "Services",  href: "/services",  external: false },
   
   { name: "Portfolio", href: "https://portfolio.imperialenterprise.co.ke", external: true },
-  { name: "Blog",      href: "/blog",      external: false },
+
   { name: "Contact",   href: "/contact",   external: false },
 ];
 
