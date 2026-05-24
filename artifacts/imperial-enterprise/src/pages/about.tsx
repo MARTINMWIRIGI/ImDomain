@@ -293,7 +293,7 @@ export default function About() {
                 className="flex flex-col gap-8"
               >
                 <div>
-                  <p className="text-xs font-black uppercase tracking-widest text-gray-400 mb-4">Verified Professional Profile</p>
+                  <p className="text-xs font-black uppercase tracking-widest text-gray-400 mb-4">Professional Profile</p>
                   <div
                     className="badge-base LI-profile-badge"
                     data-locale="en_US"
