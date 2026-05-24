@@ -317,10 +317,10 @@ export default function About() {
                   <p className="text-xs font-black uppercase tracking-widest text-gray-400 mb-4">Founder’s Commitment to You</p>
                   <ul className="space-y-4">
                     {[
-                      "Transparent reporting — you always know exactly where your investment goes",
+                      "Transparent reporting — you always know exactly what your business needs",
                       "Honest strategy — we tell you what you need, not what sounds impressive",
                       "Long-term thinking — we grow with you, not just for a single project",
-                      "Direct access — you speak to Martin, not a junior account manager",
+                      "Direct access — you speak to professionals and committed experts",
                     ].map((item) => (
                       <li key={item} className="flex items-start gap-3 text-sm text-gray-700">
                         <CheckCircle2 size={16} className="text-primary shrink-0 mt-0.5" />
