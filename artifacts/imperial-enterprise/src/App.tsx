@@ -12,8 +12,7 @@ import Services from "@/pages/services";
 import About from "@/pages/about";
 import Portfolio from "@/pages/portfolio";
 import Contact from "@/pages/contact";
-import Hosting from "@/pages/hosting";
-import Domains from "@/pages/domains";
+
 
 const queryClient = new QueryClient();
 
@@ -26,8 +25,7 @@ function Router() {
         <Route path="/about" component={About} />
         <Route path="/portfolio" component={Portfolio} />
         <Route path="/contact" component={Contact} />
-        <Route path="/hosting" component={Hosting} />
-        <Route path="/domains" component={Domains} />
+        
 <Route path="/blog" component={Blog} />
 <Route path="/blog/:slug" component={BlogPost} />
         <Route component={NotFound} />
