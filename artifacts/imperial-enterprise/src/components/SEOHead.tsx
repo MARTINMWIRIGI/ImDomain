@@ -72,7 +72,7 @@ export function SEOHead({ title, description, keywords, canonicalPath = "/", ogI
 // ==============================================
 export const SEO_CONFIG = {
   home: {
-    title: "Imperial Enterprise | #1 Digital Marketing Agency & Web Hosting in Kenya",
+    title: "Imperial Enterprise Kenya | #1 Digital Marketing Agency & Web Hosting in Kenya",
     description: "Nairobi's premier digital growth agency. Web hosting from KSh 2,500/yr, domain registration from KSh 999/yr, SEO services, web development, AI automation & digital marketing for Kenyan businesses.",
     keywords: "digital marketing agency Nairobi, web hosting Kenya, SEO services Kenya, web development Kenya, domain registration Kenya, AI automation Kenya, best digital agency Kenya, Imperial Enterprise",
     canonicalPath: "/",
