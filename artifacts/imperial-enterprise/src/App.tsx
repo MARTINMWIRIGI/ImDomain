@@ -1,5 +1,3 @@
-import Blog from "@/pages/blog";
-import BlogPost from "@/pages/blog-post";
 import { Switch, Route, Router as WouterRouter } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -25,9 +23,6 @@ function Router() {
         <Route path="/about" component={About} />
         <Route path="/portfolio" component={Portfolio} />
         <Route path="/contact" component={Contact} />
-        
-<Route path="/blog" component={Blog} />
-<Route path="/blog/:slug" component={BlogPost} />
         <Route component={NotFound} />
       </Switch>
     </Layout>

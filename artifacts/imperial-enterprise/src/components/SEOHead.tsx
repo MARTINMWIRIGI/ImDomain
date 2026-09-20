@@ -91,8 +91,8 @@ export function SEOHead({ title, description, keywords, canonicalPath = "/", ogI
 // ==============================================
 export const SEO_CONFIG = {
   home: {
-    title: "Imperial Enterprise - Market Entry Consulting & Digital Growth Services Kenya | Nairobi",
-    description: "Imperial Enterprise: #1 market entry consulting firm for SMEs & startups in Kenya. Digital growth systems, business strategy, buyer acquisition, and East African market expansion. Book a free strategy call today.",
+    title: "Imperial Enterprise Kenya | Digital Growth & Visibility",
+    description: "Imperial Enterprise Kenya helps Kenyan SMEs, startups and brands grow their digital visibility, credibility and online presence.",
     keywords: "market entry consulting Kenya, digital growth services, business strategy consulting Kenya, SME consulting Nairobi, startup growth strategy, market entry East Africa, digital transformation Kenya, business intelligence Kenya, market research Kenya, expansion strategy Kenya",
     canonicalPath: "/",
   },
