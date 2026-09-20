@@ -12,7 +12,6 @@ const navLinks = [
   { name: "Hosting",   href: "/hosting",   external: false },
   { name: "Domains",   href: "/domains",   external: false },
   { name: "Portfolio", href: "https://portfolio.imperialenterprise.co.ke", external: true },
-  { name: "Blog",      href: "/blog",      external: false },
   { name: "Contact",   href: "/contact",   external: false },
 ];
 
