@@ -1,10 +1,30 @@
 import { SEOHead, SEO_CONFIG } from "@/components/SEOHead";
+import { Hero } from "@/components/Hero";
 import { motion } from "framer-motion";
 import { Mail, MapPin, Phone, ArrowRight, MessageCircle, Linkedin } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 
 export default function Contact() {
+  const contactSchema = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact Imperial Enterprise",
+    "description": "Get in touch with Imperial Enterprise for a free market entry strategy consultation. Book your strategy call today.",
+    "organization": {
+      "@type": "Organization",
+      "name": "Imperial Enterprise",
+      "url": "https://imperialenterprise.co.ke",
+      "telephone": "+254703823398",
+      "email": "hello@imperialenterprise.co.ke",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "KE",
+        "addressLocality": "Nairobi"
+      }
+    }
+  };
+
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -18,53 +38,42 @@ export default function Contact() {
     const phone   = (data.get("phone")     as string) || "Not provided";
     const service = (data.get("service")   as string) || "Not specified";
     const details = (data.get("details")   as string) || "";
-
     const msg = encodeURIComponent(
-      `*New Strategy Call Request \u{1F680}*\n\n` +
-      `*Name:* ${name}\n` +
-      `*Email:* ${email}\n` +
-      `*Phone:* ${phone}\n` +
-      `*Service:* ${service}\n\n` +
-      `*Project Details:*\n${details}`
+      "*New Strategy Call Request*\n\n" +
+      "*Name:* " + name + "\n" +
+      "*Email:* " + email + "\n" +
+      "*Phone:* " + phone + "\n" +
+      "*Service:* " + service + "\n\n" +
+      "*Project Details:*\n" + details
     );
-
-    window.open(`https://wa.me/254703823398?text=${msg}`, "_blank");
-
+    window.open("https://wa.me/254703823398?text=" + msg, "_blank");
     setTimeout(() => {
       setIsSubmitting(false);
       toast({
         title: "Request Sent via WhatsApp!",
-        description: "Your strategy call request has been sent. We'll respond shortly.",
+        description: "We'll respond to your strategy call request shortly.",
       });
       form.reset();
     }, 800);
   };
 
   return (
-<>
-    <SEOHead {...SEO_CONFIG.contact} />
-    <div className="pt-28 pb-0 min-h-screen bg-white">
+    <>
+      <SEOHead {...SEO_CONFIG.contact} schema={contactSchema} />
+      
+      {/* HERO SECTION */}
+      <Hero
+        title="Ready to Grow? Let's Connect"
+        subtitle="Book a free market entry strategy call and discover how we can help your business dominate in Kenya and beyond."
+        backgroundImage="/hero-contact.jpg"
+        primaryCTA={{
+          text: "Schedule Your Call",
+          href: "#contact-form",
+        }}
+        overlayOpacity="light"
+      />
 
-      {/* Page Header */}
-      <div className="container mx-auto px-6 mb-10">
-        <div className="max-w-4xl">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-7xl font-black text-secondary tracking-tight mb-4 uppercase"
-          >
-            INITIATE <span className="text-primary">CONTACT</span>
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-xl text-gray-600 font-medium"
-          >
-            Ready to dominate? Drop us a line and let's map out your path to the top.
-          </motion.p>
-        </div>
-      </div>
+    <div className="pb-0 bg-white">
 
       {/* Contact Quick Bar — phone, email, WhatsApp, LinkedIn in one row */}
       <div className="container mx-auto px-6 mb-10">
@@ -198,6 +207,7 @@ export default function Contact() {
               <div className="space-y-2">
                 <label className="text-sm font-bold text-secondary uppercase tracking-wider">Project Details</label>
                 <textarea
+                  name="details"
                   rows={5}
                   name="details"
                   required

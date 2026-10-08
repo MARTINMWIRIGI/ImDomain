@@ -10,8 +10,7 @@ import Services from "@/pages/services";
 import About from "@/pages/about";
 import Portfolio from "@/pages/portfolio";
 import Contact from "@/pages/contact";
-import Hosting from "@/pages/hosting";
-import Domains from "@/pages/domains";
+
 
 const queryClient = new QueryClient();
 

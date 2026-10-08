@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { SEOHead, SEO_CONFIG } from "@/components/SEOHead";
+import { Hero } from "@/components/Hero";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { Linkedin, ExternalLink, Code2, TrendingUp, Globe, Lightbulb, CheckCircle2, ArrowRight } from "lucide-react";
@@ -17,6 +18,24 @@ export default function About() {
       if (s) document.body.removeChild(s);
     };
   }, []);
+
+  const aboutSchema = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About Imperial Enterprise",
+    "description": "Imperial Enterprise is Kenya's leading market entry and digital growth consulting firm helping SMEs, startups and brands grow online and expand into East African markets.",
+    "organization": {
+      "@type": "Organization",
+      "name": "Imperial Enterprise",
+      "url": "https://imperialenterprise.co.ke",
+      "foundingDate": "2019",
+      "areaServed": ["KE", "EA"],
+      "founder": {
+        "@type": "Person",
+        "name": "Martin Wirigi"
+      }
+    }
+  };
 
   const stats = [
     { label: "Years Building Brands", value: "5+" },
@@ -40,32 +59,22 @@ export default function About() {
   ];
 
   return (
-<>
-    <SEOHead {...SEO_CONFIG.about} />
-    <div className="pt-32 pb-24 min-h-screen bg-white">
+    <>
+      <SEOHead {...SEO_CONFIG.about} schema={aboutSchema} />
+      
+      {/* HERO SECTION */}
+      <Hero
+        title="We Put Kenyan Businesses on the Global Map"
+        subtitle="Imperial Enterprise elevates the standard of digital presence in East Africa by combining technical precision with deep market understanding."
+        backgroundImage="/hero-about.jpg"
+        primaryCTA={{
+          text: "Work With Us",
+          href: "/contact",
+        }}
+        overlayOpacity="light"
+      />
 
-      {/* Mission / Hero */}
-      <section className="container mx-auto px-6 mb-32">
-        <div className="max-w-4xl">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-            <h1 className="text-4xl md:text-6xl font-black text-secondary tracking-tight mb-8 leading-tight">
-              WE PUT KENYAN BUSINESSES ON THE <span className="text-primary">GLOBAL MAP.</span>
-            </h1>
-            <div className="w-24 h-2 bg-primary mb-12"></div>
-            <div className="space-y-5 text-gray-600 max-w-3xl">
-              <p className="text-xl font-medium text-secondary leading-relaxed">
-                Imperial Enterprise was founded with a singular, aggressive mission: to elevate the standard of digital presence in East Africa.
-              </p>
-              <p className="text-lg leading-relaxed">
-                For too long, local businesses have settled for generic, uninspired digital marketing and web design. We saw incredible Kenyan companies with world-class products, hampered by sub-par digital identities that didn't reflect their true value.
-              </p>
-              <p className="text-lg leading-relaxed">
-                We built Imperial Enterprise to bridge that gap — combining technical precision with a deep understanding of the Nairobi hustle and the East African consumer. We are not just an agency; we are your growth partners, your digital architects, and your competitive advantage.
-              </p>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+    <div className="pb-24 bg-white">
 
       {/* Stats */}
       <section className="bg-secondary py-20 mb-32 relative overflow-hidden">
@@ -172,7 +181,7 @@ export default function About() {
 
               <div className="space-y-5 text-gray-600 mb-10 text-base leading-relaxed">
                 <p>
-                  Martin is the architect behind Imperial Enterprise's relentless drive for digital excellence. With a rare combination of full-stack development expertise and high-performance digital marketing strategy, he brings a 360-degree skill set that most agencies scramble to assemble across entire teams.
+                  Martin is the architect behind Imperial Enterprise's relentless drive for digital excellence. With a rare combination of development expertise and high-performance digital marketing strategy, he brings a 360-degree skill set that most agencies scramble to assemble across entire teams.
                 </p>
                 <p>
                   Born and built in Nairobi, Martin understands the nuances of the Kenyan market — the consumer behaviors, the mobile-first reality, and the competitive landscape — at a level that external consultants simply cannot match. He has helped businesses ranging from ambitious early-stage startups to established enterprises redefine their digital presence and unlock new revenue channels.
@@ -253,10 +262,7 @@ export default function About() {
               </span>
               <h2 className="text-3xl md:text-5xl font-black text-secondary tracking-tight">IN HIS OWN WORDS</h2>
             </div>
-
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-
-              {/* Quote Block */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -266,22 +272,20 @@ export default function About() {
                 <div className="absolute -top-4 -left-2 text-9xl font-serif text-primary/10 leading-none select-none pointer-events-none">“</div>
                 <blockquote className="relative z-10 pl-2 space-y-5">
                   <p className="text-xl font-semibold text-secondary leading-relaxed">
-                    Every business I've worked with has had one thing in common — enormous potential that their digital presence wasn't reflecting.
+                    Every startup, every brand, every business I’ve worked with has had one thing in common — enormous potential that their digital presence wasn’t reflecting.
                   </p>
                   <p className="text-lg text-gray-600 leading-relaxed">
-                    When I built Imperial Enterprise, I made a promise: to fight for every client's brand with the same hunger I'd bring to my own. The Kenyan market is competitive, the digital space is noisy, and mediocrity is expensive.
+                    I made a promise to fight for every client’s brand with the same hunger I’d bring to my own. The Kenyan market is competitive, the digital space is noisy, and mediocrity is expensive.
                   </p>
                   <p className="text-lg text-gray-600 leading-relaxed">
-                    We're not here to deliver reports and templates. We're here to build businesses that command respect — online and offline. When you work with Imperial Enterprise, you get my full attention, my full team, and my full commitment to your growth.
+                    We’re here to build businesses that command respect — online and offline. When you work with Imperial Enterprise, you get full attention, the full team, and full commitment to your growth.
                   </p>
                   <footer className="pt-6 border-t border-gray-100">
                     <p className="font-black text-secondary text-lg">Martin Mwirigi</p>
-                    <p className="text-sm text-gray-500 font-medium">Founder &amp; CEO, Imperial Enterprise</p>
+                    <p className="text-sm text-gray-500 font-medium">Founder, Imperial Enterprise</p>
                   </footer>
                 </blockquote>
               </motion.div>
-
-              {/* LinkedIn Badge + Trust Points */}
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -289,7 +293,7 @@ export default function About() {
                 className="flex flex-col gap-8"
               >
                 <div>
-                  <p className="text-xs font-black uppercase tracking-widest text-gray-400 mb-4">Verified Professional Profile</p>
+                  <p className="text-xs font-black uppercase tracking-widest text-gray-400 mb-4">Professional Profile</p>
                   <div
                     className="badge-base LI-profile-badge"
                     data-locale="en_US"
@@ -309,15 +313,14 @@ export default function About() {
                     </a>
                   </div>
                 </div>
-
                 <div className="bg-gray-50 border border-gray-100 rounded-2xl p-6">
-                  <p className="text-xs font-black uppercase tracking-widest text-gray-400 mb-4">Founder's Commitment to You</p>
+                  <p className="text-xs font-black uppercase tracking-widest text-gray-400 mb-4">Founder’s Commitment to You</p>
                   <ul className="space-y-4">
                     {[
-                      "Transparent reporting — you always know exactly where your investment goes",
+                      "Transparent reporting — you always know exactly what your business needs",
                       "Honest strategy — we tell you what you need, not what sounds impressive",
                       "Long-term thinking — we grow with you, not just for a single project",
-                      "Direct access — you speak to Martin, not a junior account manager",
+                      "Direct access — you speak to professionals and committed experts",
                     ].map((item) => (
                       <li key={item} className="flex items-start gap-3 text-sm text-gray-700">
                         <CheckCircle2 size={16} className="text-primary shrink-0 mt-0.5" />

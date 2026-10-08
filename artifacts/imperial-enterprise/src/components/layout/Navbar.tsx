@@ -9,8 +9,8 @@ const navLinks = [
   { name: "Home",      href: "/",          external: false },
   { name: "About",     href: "/about",     external: false },
   { name: "Services",  href: "/services",  external: false },
-  { name: "Hosting",   href: "/hosting",   external: false },
-  { name: "Domains",   href: "/domains",   external: false },
+  
+  { name: "Portfolio", href: "https://portfolio.imperialenterprise.co.ke", external: true },
 
   { name: "Contact",   href: "/contact",   external: false },
 ];
@@ -31,8 +31,6 @@ export function Navbar() {
       <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         isScrolled ? "bg-white/97 backdrop-blur-lg border-b border-gray-100 shadow-md py-0" : "bg-white py-0"
       }`}>
-
-        {/* Top utility bar */}
         <div className="bg-secondary text-white hidden lg:block">
           <div className="container mx-auto px-6 flex items-center justify-between py-1.5">
             <p className="text-xs text-blue-200 font-medium">
@@ -50,18 +48,20 @@ export function Navbar() {
           </div>
         </div>
 
-        {/* Main nav bar */}
         <div className="container mx-auto px-6 flex items-center justify-between py-3 md:py-4">
           <Link href="/" className="flex items-center shrink-0">
             <img src={logoImg} alt="Imperial Enterprise" className="h-10 md:h-12 w-auto object-contain" />
           </Link>
-
-          {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) =>
               link.external ? (
                 <a key={link.name} href={link.href} target="_blank" rel="noopener noreferrer"
                   className="flex items-center gap-1 px-4 py-2 text-sm font-semibold rounded-lg transition-colors hover:bg-primary/10 hover:text-primary text-secondary">
+                  <Globe size={13} className="shrink-0" />{link.name}
+                </a>
+              ) : (
+                <Link key={link.name} href={link.href}
+                  className={`px-4 py-2 text-sm font-semibold rounded-lg transition-colors hover:bg-primary/10 hover:text-primary ${location === link.href ? "text-primary bg-primary/10" : "text-secondary"}`}>
                   <Globe size={13} className="shrink-0" />
                   {link.name}
                 </a>
@@ -75,8 +75,6 @@ export function Navbar() {
               )
             )}
           </nav>
-
-          {/* Right side actions */}
           <div className="hidden lg:flex items-center gap-3">
             <a href="https://wa.me/+254703823398" target="_blank" rel="noopener noreferrer"
               data-testid="link-nav-whatsapp"
@@ -96,7 +94,6 @@ export function Navbar() {
         </div>
       </header>
 
-      {/* Mobile Nav */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div initial={{ x: "100%" }} animate={{ x: 0 }} exit={{ x: "100%" }}
@@ -109,27 +106,24 @@ export function Navbar() {
                 <X size={22} />
               </button>
             </div>
-
             <div className="flex flex-col px-5 py-6 gap-1 flex-1">
               {navLinks.map((link) =>
                 link.external ? (
                   <a key={link.name} href={link.href} target="_blank" rel="noopener noreferrer"
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="flex items-center gap-2 text-lg font-bold px-4 py-3 rounded-xl text-secondary hover:bg-gray-50 transition-colors">
+                    <Globe size={18} className="text-primary shrink-0" />{link.name}
                     <Globe size={18} className="text-primary shrink-0" />
                     {link.name}
                   </a>
                 ) : (
                   <Link key={link.name} href={link.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className={`text-lg font-bold px-4 py-3 rounded-xl transition-colors ${
-                      location === link.href ? "text-primary bg-primary/10" : "text-secondary hover:bg-gray-50"
-                    }`}>
+                    className={`text-lg font-bold px-4 py-3 rounded-xl transition-colors ${location === link.href ? "text-primary bg-primary/10" : "text-secondary hover:bg-gray-50"}`}>
                     {link.name}
                   </Link>
                 )
               )}
-
               <div className="mt-4 pt-4 border-t border-gray-100">
                 <p className="text-[10px] font-black uppercase tracking-widest text-gray-400 px-4 mb-3">Get in Touch</p>
                 <div className="grid grid-cols-2 gap-2 px-1">
@@ -154,7 +148,6 @@ export function Navbar() {
                 </div>
               </div>
             </div>
-
             <div className="p-5 border-t border-gray-100">
               <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}
                 className="block text-center w-full bg-primary text-white py-4 rounded-xl font-bold uppercase tracking-wide hover:bg-blue-700 transition-colors shadow-lg">
@@ -165,7 +158,6 @@ export function Navbar() {
         )}
       </AnimatePresence>
 
-      {/* Floating WhatsApp Button */}
       <a href="https://wa.me/+254703823398" target="_blank" rel="noopener noreferrer"
         data-testid="link-floating-whatsapp"
         className="fixed bottom-6 right-6 z-40 flex items-center gap-2 bg-[#25D366] text-white pl-4 pr-5 py-3.5 rounded-full shadow-2xl shadow-[#25D366]/40 hover:bg-[#1EBE5C] transition-all hover:-translate-y-1 font-bold text-sm">
