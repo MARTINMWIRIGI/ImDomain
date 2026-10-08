@@ -209,6 +209,7 @@ export default function Contact() {
                 <textarea
                   name="details"
                   rows={5}
+                  name="details"
                   required
                   className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-4 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none"
                   placeholder="Tell us about your business goals and current challenges..."

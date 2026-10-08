@@ -94,6 +94,7 @@ export const SEO_CONFIG = {
     title: "Imperial Enterprise Kenya | Digital Growth & Visibility",
     description: "Imperial Enterprise Kenya helps Kenyan SMEs, startups and brands grow their digital visibility, credibility and online presence.",
     keywords: "market entry consulting Kenya, digital growth services, business strategy consulting Kenya, SME consulting Nairobi, startup growth strategy, market entry East Africa, digital transformation Kenya, business intelligence Kenya, market research Kenya, expansion strategy Kenya",
+    keywords: "digital marketing agency Nairobi, web hosting Kenya, SEO services Kenya, web development Kenya, domain registration Kenya, AI automation Kenya, best digital agency Kenya, Imperial Enterprise",
     canonicalPath: "/",
   },
   services: {

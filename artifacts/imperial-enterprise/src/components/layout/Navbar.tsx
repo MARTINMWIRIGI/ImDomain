@@ -62,6 +62,14 @@ export function Navbar() {
               ) : (
                 <Link key={link.name} href={link.href}
                   className={`px-4 py-2 text-sm font-semibold rounded-lg transition-colors hover:bg-primary/10 hover:text-primary ${location === link.href ? "text-primary bg-primary/10" : "text-secondary"}`}>
+                  <Globe size={13} className="shrink-0" />
+                  {link.name}
+                </a>
+              ) : (
+                <Link key={link.name} href={link.href}
+                  className={`px-4 py-2 text-sm font-semibold rounded-lg transition-colors hover:bg-primary/10 hover:text-primary ${
+                    location === link.href ? "text-primary bg-primary/10" : "text-secondary"
+                  }`}>
                   {link.name}
                 </Link>
               )
@@ -78,6 +86,7 @@ export function Navbar() {
               Get Started
             </Link>
           </div>
+
           <button className="lg:hidden text-secondary p-2" data-testid="button-mobile-menu"
             onClick={() => setIsMobileMenuOpen(true)}>
             <Menu size={24} />
@@ -104,6 +113,8 @@ export function Navbar() {
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="flex items-center gap-2 text-lg font-bold px-4 py-3 rounded-xl text-secondary hover:bg-gray-50 transition-colors">
                     <Globe size={18} className="text-primary shrink-0" />{link.name}
+                    <Globe size={18} className="text-primary shrink-0" />
+                    {link.name}
                   </a>
                 ) : (
                   <Link key={link.name} href={link.href}

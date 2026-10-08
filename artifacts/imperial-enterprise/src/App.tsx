@@ -23,6 +23,8 @@ function Router() {
         <Route path="/about" component={About} />
         <Route path="/portfolio" component={Portfolio} />
         <Route path="/contact" component={Contact} />
+        <Route path="/hosting" component={Hosting} />
+        <Route path="/domains" component={Domains} />
         <Route component={NotFound} />
       </Switch>
     </Layout>
